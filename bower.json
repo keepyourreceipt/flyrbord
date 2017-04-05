@@ -1,0 +1,17 @@
+{
+  "name": "flyrbord",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Michael <michaelkpeterman@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
