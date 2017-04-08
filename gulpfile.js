@@ -12,8 +12,17 @@ gulp.task('sass', ['clean-css'], function () {
 });
 
 gulp.task('clean-css', function () {
-    return gulp.src('./dist/css', { read: false} )
-      .pipe( clean() );
+  return gulp.src('./dist/css', { read: false} )
+    .pipe( clean() );
+});
+
+// Template files //
+gulp.task('copy-template-files', function () {
+  return gulp.src([
+      './app/**/*.php',
+      './app/*.css'
+  ])
+    .pipe( gulp.dest('./dist') );
 });
 
 // Default tasks //
@@ -21,4 +30,4 @@ gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['sass'] );
 });
 
-gulp.task('default', ['clean', 'sass']);
+gulp.task('default', ['copy-template-files', 'sass']);
