@@ -17,6 +17,9 @@ add_action( 'wp_enqueue_scripts', 'include_hugoandlily_scripts' );
  */
  add_theme_support( 'menus' );
  add_theme_support( 'custom-logo' );
+ add_theme_support( 'wc-product-gallery-zoom' );
+ add_theme_support( 'wc-product-gallery-lightbox' );
+ add_theme_support( 'wc-product-gallery-slider' );
 
 /**
  * Add Qoo Commerce support
