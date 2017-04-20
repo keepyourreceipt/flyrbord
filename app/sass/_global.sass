@@ -1,38 +1,58 @@
 body
-  background: #efefef
-  font-family: sans-serif
+  font-family: 'Poppins', sans-serif
+  padding: 0 30px
 
-div.menu
-  padding: 15px 30px
-  background: rgba( 0,0,0,0.2 )
-  top: 0px
-  left: 0px
+div.menu-container
+  background-color: #efefef
+  position: absolute
+  width: 100%
+  left: 0
 
-  .menu-logo-container
-    display: inline-block
+  div.menu
+    position: relative
+    z-index: 100
+    top: 0px
+    left: 0px
+    max-width: 1200px
+    margin: 0 auto
+    padding: 15px 30px
 
-    img.menu-logo
-      max-height: 30px
-
-  .menu-items-container
-    display: inline-block
-    vertical-align: top
-    float: right
-
-  ul.menu-items
-    margin: 0
-
-    li.menu-item
-      list-style: none
+    .menu-logo-container
       display: inline-block
 
-      a
-        text-decoration: none
+      img.menu-logo
+        max-height: 52px
+
+    .menu-items-container
+      display: inline-block
+      vertical-align: top
+      float: right
+
+    ul.menu-items
+      margin: 0
+
+      li.menu-item
+        list-style: none
         display: inline-block
-        margin: 0 5px
-        line-height: 34px
-        text-transform: uppercase
-        color: #222
+
+        &.button
+          border: solid #fff 1px
+
+        a
+          text-decoration: none
+          display: inline-block
+          margin: 0 0.5em
+          line-height: 60px
+          text-transform: uppercase
+          letter-spacing: 0.5px
+          color: #222
 
 
-.page-content  
+.woocommerce,
+.woocommerce-page
+  .page-content
+    padding-top: 120px
+
+.page-content
+  max-width: 1200px
+  margin: 0 auto
