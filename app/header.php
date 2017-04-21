@@ -22,7 +22,9 @@
             $image = wp_get_attachment_image_src( $custom_logo_id , 'menu-logo' );
             ?>
             <div class="menu-logo-container">
-              <img class="menu-logo" src="<?php echo $image[0]; ?>" alt="Logo">
+              <a href="<?php echo get_home_url(); ?>">
+                <img class="menu-logo" src="<?php echo $image[0]; ?>" alt="Logo">
+              </a>
             </div>
           <?php } ?>
 

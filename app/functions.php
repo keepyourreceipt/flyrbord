@@ -41,3 +41,39 @@ add_image_size( 'menu-logo', 120, 120, false );
 register_nav_menus( array(
 	'main_navigation_menu' => 'Main Navigation Menu',
 ) );
+
+/**
+ * Register widget areas
+ *
+ */
+function hugoandlily_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Footer Left',
+		'id'            => 'footer_left',
+		'before_widget' => '<div class="footer-widget-container">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
+  register_sidebar( array(
+    'name'          => 'Footer Center',
+    'id'            => 'footer_center',
+    'before_widget' => '<div class="footer-widget-container">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+  ) );
+
+  register_sidebar( array(
+    'name'          => 'Footer Right',
+    'id'            => 'footer_right',
+    'before_widget' => '<div class="footer-widget-container">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+  ) );
+
+}
+add_action( 'widgets_init', 'hugoandlily_widgets_init' );
