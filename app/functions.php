@@ -75,5 +75,14 @@ function hugoandlily_widgets_init() {
     'after_title'   => '</h2>',
   ) );
 
+  register_sidebar( array(
+    'name'          => 'Shop Sidebar',
+    'id'            => 'shop_sidebar',
+    'before_widget' => '<div class="shop-widget-container">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+  ) );
+
 }
 add_action( 'widgets_init', 'hugoandlily_widgets_init' );

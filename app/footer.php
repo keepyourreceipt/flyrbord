@@ -26,7 +26,7 @@
           <img class="menu-logo" src="<?php echo $image[0]; ?>" alt="Logo">
         </a>
     <?php } ?>
-    &copy; Copyright <?php echo date( "Y" ); ?><?php echo get_bloginfo("name"); ?>
+    Copyright <?php echo date( "Y" ); ?><?php echo get_bloginfo("name"); ?>
   </footer>
   <?php wp_footer(); ?>
   </body>

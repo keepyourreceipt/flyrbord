@@ -28,13 +28,13 @@ gulp.task('template-files', ['clean-template-files'], function () {
 gulp.task('clean-template-files', function () {
   return gulp.src([
     './dist/*.php',
-    './dist/*.css'
+    './dist/*.css',
+    './dist/woocommerce/**/*'
   ], { read: false} )
     .pipe( clean() );
 });
 
 // JS //
-// Template files //
 gulp.task('js', ['clean-js'], function () {
   return gulp.src([
       './app/js/**/*.js'
@@ -53,6 +53,7 @@ gulp.task('clean-js', function () {
 gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['sass'] );
     gulp.watch( './app/*.php', ['template-files'] );
+    gulp.watch( './app/woocommerce/**/*', ['template-files'] );
     gulp.watch( './app/*.css', ['template-files'] );
     gulp.watch( './app/js/**/*.js', ['js'] );
 });
