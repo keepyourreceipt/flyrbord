@@ -3,18 +3,33 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
+var concatCss = require('gulp-concat-css');
 
 // CSS //
-gulp.task('sass', ['clean-css'], function () {
-  return gulp.src('./app/sass/main.sass')
-    .pipe( sass().on('error', sass.logError) )
-    .pipe( gulp.dest('./dist/css') );
-});
-
-gulp.task('clean-css', function () {
-  return gulp.src('./dist/css', { read: false} )
+gulp.task('css', ['combine-css'], function () {
+  return gulp.src('./app/css/', { read: false} )
     .pipe( clean() );
 });
+
+gulp.task('combine-css', ['vendor-css'], function () {
+  return gulp.src('./app/css/**/*.css')
+    .pipe( concatCss("bundle.css") )
+    .pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('vendor-css', ['sass'], function () {
+  return gulp.src([
+    './bower_components/bootstrap/dist/css/bootstrap.css'
+  ])
+    .pipe( gulp.dest('./app/css') );
+});
+
+gulp.task('sass', function () {
+  return gulp.src('./app/sass/main.sass')
+    .pipe( sass().on('error', sass.logError) )
+    .pipe( gulp.dest('./app/css') );
+});
+
 
 // Template files //
 gulp.task('template-files', ['clean-template-files'], function () {
@@ -51,7 +66,7 @@ gulp.task('clean-js', function () {
 
 // Default tasks //
 gulp.task('watch', function() {
-    gulp.watch( './app/sass/**/*.sass', ['sass'] );
+    gulp.watch( './app/sass/**/*.sass', ['css'] );
     gulp.watch( './app/*.php', ['template-files'] );
     gulp.watch( './app/woocommerce/**/*', ['template-files'] );
     gulp.watch( './app/*.css', ['template-files'] );

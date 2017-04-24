@@ -1,4 +1,5 @@
 
+    </div><!-- /.container -->
   </div><!-- /.page-content -->
   <footer>
 
