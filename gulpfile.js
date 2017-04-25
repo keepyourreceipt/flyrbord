@@ -4,10 +4,11 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 var concatCss = require('gulp-concat-css');
+var concat = require('gulp-concat');
 
 // CSS //
 gulp.task('css', ['combine-css'], function () {
-  return gulp.src('./app/css/', { read: false} )
+  return gulp.src('./app/css/**/*', { read: false} )
     .pipe( clean() );
 });
 
@@ -24,10 +25,15 @@ gulp.task('vendor-css', ['sass'], function () {
     .pipe( gulp.dest('./app/css') );
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', ['clean-css-dist'], function () {
   return gulp.src('./app/sass/main.sass')
     .pipe( sass().on('error', sass.logError) )
     .pipe( gulp.dest('./app/css') );
+});
+
+gulp.task('clean-css-dist', function () {
+  return gulp.src('./dist/css/**/*', { read: false} )
+    .pipe( clean() );
 });
 
 
@@ -50,16 +56,36 @@ gulp.task('clean-template-files', function () {
 });
 
 // JS //
-gulp.task('js', ['clean-js'], function () {
+gulp.task('js', ['concat-js'], function () {
   return gulp.src([
-      './app/js/**/*.js'
+    './app/js/tmp/'
+  ], { read: false} )
+    .pipe( clean() );
+});
+
+gulp.task('concat-js', ['theme-js'], function() {
+  return gulp.src('./app/js/tmp/*.js')
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest('./dist/js'));
+});
+
+gulp.task('theme-js', ['vendor-js'], function () {
+  return gulp.src([
+      './app/js/*.js'
   ])
-    .pipe( gulp.dest('./dist/js') );
+    .pipe( gulp.dest('./app/js/tmp') );
+});
+
+gulp.task('vendor-js', ['clean-js'], function () {
+  return gulp.src([
+      
+  ])
+    .pipe( gulp.dest('./app/js/tmp') );
 });
 
 gulp.task('clean-js', function () {
   return gulp.src([
-    './dist/js/**/*.js'
+    './dist/js/**/*'
   ], { read: false} )
     .pipe( clean() );
 });
@@ -69,7 +95,6 @@ gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['css'] );
     gulp.watch( './app/*.php', ['template-files'] );
     gulp.watch( './app/woocommerce/**/*', ['template-files'] );
-    gulp.watch( './app/*.css', ['template-files'] );
     gulp.watch( './app/js/**/*.js', ['js'] );
 });
 

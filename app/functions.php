@@ -4,7 +4,7 @@
  */
 function include_hugoandlily_scripts() {
     // These scripts
-    wp_enqueue_script( 'hugoandlily-scripts', get_template_directory_uri() . '/js/main.js', array( 'jquery' ) );
+    wp_enqueue_script( 'hugoandlily-scripts', get_template_directory_uri() . '/js/bundle.js', array( 'jquery' ) );
 
     // Theme stylesheets
     wp_enqueue_style( 'style', get_stylesheet_uri() );

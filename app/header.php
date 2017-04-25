@@ -29,12 +29,16 @@
                   </a>
                 <?php } ?>
               </div>
-              <div class="main-menu-items col-sm-9">
+              <div class="main-menu-items col-sm-9 hidden-sm">
                 <?php wp_nav_menu( array( 'theme_location' => 'main_navigation_menu', 'fallback_cb' => 'default_header_nav') ); ?>
               </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="mobile-menu visible-xs visible-sm">
+      <?php wp_nav_menu( array( 'theme_location' => 'main_navigation_menu', 'fallback_cb' => 'default_header_nav') ); ?>
     </div>
 
     <div class="page-content">
