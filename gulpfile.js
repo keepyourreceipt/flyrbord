@@ -73,4 +73,4 @@ gulp.task('watch', function() {
     gulp.watch( './app/js/**/*.js', ['js'] );
 });
 
-gulp.task('default', ['template-files', 'sass', 'js']);
+gulp.task('default', ['template-files', 'css', 'js']);
