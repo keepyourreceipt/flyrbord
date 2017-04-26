@@ -47,7 +47,7 @@
                     $product_count = count( $products_in_cart );
                   ?>
                   <span>
-                    <?php echo $product_count; ?>
+                    (<?php echo $product_count; ?>)
                   </span>
                 </a>
               </div>

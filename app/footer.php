@@ -1,20 +1,19 @@
 
     </div><!-- /.container -->
   </div><!-- /.page-content -->
+
   <footer>
-
-    <?php if ( is_active_sidebar( 'footer_left' ) ) { ?>
-    	<?php dynamic_sidebar( 'footer_left' ); ?>
-    <?php } ?>
-
-    <?php if ( is_active_sidebar( 'footer_center' ) ) { ?>
-      <?php dynamic_sidebar( 'footer_center' ); ?>
-    <?php } ?>
-
-    <?php if ( is_active_sidebar( 'footer_right' ) ) { ?>
-      <?php dynamic_sidebar( 'footer_right' ); ?>
-    <?php } ?>
-
+    <div class="container-fluid">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <?php if ( is_active_sidebar( 'footer' ) ) { ?>
+            	<?php dynamic_sidebar( 'footer' ); ?>
+            <?php } ?>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <footer class="copyright">

@@ -49,36 +49,27 @@ register_nav_menus( array(
 function hugoandlily_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => 'Footer Left',
-		'id'            => 'footer_left',
-		'before_widget' => '<div class="footer-widget-container">',
+		'name'          => 'Footer',
+		'id'            => 'footer',
+		'before_widget' => '<div class="footer-widget col-sm-3 center-block">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
 	) );
 
   register_sidebar( array(
-    'name'          => 'Footer Center',
-    'id'            => 'footer_center',
-    'before_widget' => '<div class="footer-widget-container">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h2>',
-    'after_title'   => '</h2>',
-  ) );
-
-  register_sidebar( array(
-    'name'          => 'Footer Right',
-    'id'            => 'footer_right',
-    'before_widget' => '<div class="footer-widget-container">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h2>',
-    'after_title'   => '</h2>',
-  ) );
-
-  register_sidebar( array(
     'name'          => 'Shop Sidebar',
     'id'            => 'shop_sidebar',
     'before_widget' => '<div class="shop-widget-container">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+  ) );
+
+  register_sidebar( array(
+    'name'          => 'News Sidebar',
+    'id'            => 'news_sidebar',
+    'before_widget' => '<div class="news-widget-container">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2>',
     'after_title'   => '</h2>',

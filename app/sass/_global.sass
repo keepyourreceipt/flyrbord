@@ -2,28 +2,35 @@ body
   font-family: 'Poppins', sans-serif
   font-size: 16px
 
+  .page-content
+    min-height: 60vh
+
 footer
-  text-align: center
-  background-color: #eee
+  background-color: $dark-gray
   padding: 60px 0
 
-  .footer-widget-container
-    min-width: 20vw
-    display: inline-block
-    max-width: 1200px
-    margin: 0 auto
-    padding: 0 30px 0 30px
-    text-align: left
+  .footer-widget
 
-    ul.menu
+    h2
+      color: $light-gray
+      font-size: 1.125em
+
+    ul
       padding-left: 0
+      margin-left: 0
 
       li
         list-style: none
 
         a
           text-decoration: none
-          color: #999
+          color: $white
+          font-size: 0.8em
 
 
   &.copyright
+    background-color: $light-gray
+    text-align: center
+
+    img
+      max-height: 60px
