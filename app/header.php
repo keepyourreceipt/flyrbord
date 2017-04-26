@@ -14,6 +14,18 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+    <div class="announcement-bar container-fluid">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <p>Now accepting orders for our new products!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="main-menu container-fluid">
       <div class="row">
         <div class="container">
