@@ -18,7 +18,7 @@
       <div class="row">
         <div class="container">
           <div class="row">
-            <div class="main-menu-logo col-sm-3">
+            <div class="main-menu-logo col-xs-6 col-sm-6 col-md-3">
               <?php
                 if ( get_theme_mod( 'custom_logo' ) ) {
                   $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -29,8 +29,30 @@
                   </a>
                 <?php } ?>
               </div>
-              <div class="main-menu-items col-sm-9 hidden-sm">
-                <?php wp_nav_menu( array( 'theme_location' => 'main_navigation_menu', 'fallback_cb' => 'default_header_nav') ); ?>
+              <div class="main-menu-items col-sm-9 hidden-xs hidden-sm">
+                <?php wp_nav_menu( array(
+                    'theme_location' => 'main_navigation_menu',
+                    'container'=> false,
+                    'fallback_cb' => 'default_header_nav'
+                  )); ?>
+                <?php
+                  global $woocommerce;
+                  $cart_url = $woocommerce->cart->get_cart_url();
+                ?>
+                <span class="cart-divider">&nbsp;|&nbsp;</span>
+                <a href="<?php echo $cart_url; ?>">
+                  <span class="glyphicon glyphicon-shopping-cart"></span>
+                  <?php
+                    $products_in_cart = $woocommerce->cart->cart_contents;
+                    $product_count = count( $products_in_cart );
+                  ?>
+                  <span>
+                    <?php echo $product_count; ?>
+                  </span>
+                </a>
+              </div>
+              <div class="mobile-menu-toggle open col-xs-6 col-sm-6 visible-xs visible-sm">
+                <span>MENU</span>&nbsp;<span class="glyphicon glyphicon-menu-hamburger"></span>
               </div>
           </div>
         </div>
@@ -38,6 +60,10 @@
     </div>
 
     <div class="mobile-menu visible-xs visible-sm">
+      <div class="mobile-menu-toggle close">
+        <span>CLOSE</span>&nbsp;<span class="glyphicon glyphicon-remove"></span>
+      </div>
+      <h4>Menu</h4>
       <?php wp_nav_menu( array( 'theme_location' => 'main_navigation_menu', 'fallback_cb' => 'default_header_nav') ); ?>
     </div>
 
