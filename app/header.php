@@ -18,8 +18,12 @@
       <div class="row">
         <div class="container">
           <div class="row">
-            <div class="col-sm-12 text-center">
+            <div class="col-sm-6">
               <p>Now accepting orders for our new products!</p>
+            </div>
+            <div class="col-sm-6 text-right hidden-xs hidden-sm">
+              <a href="mailto:info@example.com">sales@example.com</a>
+              <a href="tel:5555555555">555-555-5555</a>
             </div>
           </div>
         </div>
@@ -30,7 +34,7 @@
       <div class="row">
         <div class="container">
           <div class="row">
-            <div class="main-menu-logo col-xs-6 col-sm-6 col-md-3">
+            <div class="main-menu-logo col-xs-6 col-sm-6 col-md-2">
               <?php
                 if ( get_theme_mod( 'custom_logo' ) ) {
                   $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -41,17 +45,18 @@
                   </a>
                 <?php } ?>
               </div>
-              <div class="main-menu-items col-sm-9 hidden-xs hidden-sm">
+              <div class="main-menu-items col-sm-8 hidden-xs hidden-sm center-text">
                 <?php wp_nav_menu( array(
                     'theme_location' => 'main_navigation_menu',
                     'container'=> false,
                     'fallback_cb' => 'default_header_nav'
                   )); ?>
+              </div>
+              <div class="main-menu-tools hidden-xs hidden-sm col-sm-2 text-right">
                 <?php
                   global $woocommerce;
                   $cart_url = $woocommerce->cart->get_cart_url();
                 ?>
-                <span class="cart-divider">&nbsp;|&nbsp;</span>
                 <a href="<?php echo $cart_url; ?>">
                   <span class="glyphicon glyphicon-shopping-cart"></span>
                   <?php
@@ -61,6 +66,9 @@
                   <span>
                     (<?php echo $product_count; ?>)
                   </span>
+                </a>
+                <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
+                  <span class="glyphicon glyphicon-user"></span>
                 </a>
               </div>
               <div class="mobile-menu-toggle open col-xs-6 col-sm-6 visible-xs visible-sm">
