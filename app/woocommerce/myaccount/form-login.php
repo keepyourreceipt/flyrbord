@@ -38,6 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php endif; ?>
 
 		<h2><?php _e( 'Account login', 'woocommerce' ); ?></h2>
+		<p>Login to your account to view your cart, past orders, manage billing info, and more.</p>
 
 			<form class="woocomerce-form woocommerce-form-login login" method="post">
 
@@ -61,9 +62,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<p class="form-row">
 					<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-					<input type="submit" class="woocommerce-Button button pull-right" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />					
+					<input type="submit" class="woocommerce-Button button pull-right" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
 					<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
-						<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
+						<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" checked id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
 					</label>
 				</p>
 
