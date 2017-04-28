@@ -1,5 +1,10 @@
 <?php
 /**
+ * Include Kirki for customizer options and global content
+ */
+require_once get_template_directory() . '/inc/kirki/include-kirki.php';
+
+/**
  * Enqueue a script with jQuery as a dependency.
  */
 function include_hugoandlily_scripts() {
