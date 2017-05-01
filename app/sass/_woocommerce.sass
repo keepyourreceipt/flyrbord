@@ -1,10 +1,45 @@
 .woocommerce
 
+  td.label
+    font-size: 1.25em
+    color: $text-content-color
+    vertical-align: middle
+
+  .variations
+    margin-top: 15px
+
+  .woocommerce-MyAccount-navigation
+    ul
+      list-style: none
+      margin-left: 0px
+      padding-left: 0px
+
+      li
+        list-style: none
+
+        a
+          color: $text-content-color
+          font-size: 1.25em
+          line-height: 1.5em
+          opacity: 0.8
+          text-decoration: none
+
+        &.is-active
+          a
+            opacity: 1
+
+            &:before
+              display: inline-block
+              content: "\e080"
+              font-family: 'Glyphicons Halflings'
+              margin-right: 5px
+              font-size: 15px
+
   .woocommerce-cart-form
     margin-top: 18px
 
   .woocommerce-breadcrumb
-    margin-top: 1em
+    margin-top: 2em
 
   .cart-collaterals .cart_totals,
   .woocommerce-page .cart-collaterals .cart_totals
