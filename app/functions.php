@@ -101,3 +101,28 @@ function grd_woocommerce_script_cleaner() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'grd_woocommerce_script_cleaner', 99 );
+
+if(class_exists('Kirki')) {
+  Kirki::add_config( 'hugoandlily', array(
+  	'capability'    => 'edit_theme_options',
+  	'option_type'   => 'theme_mod',
+  ) );
+
+  Kirki::add_section( 'announcement-bar', array(
+      'title'          => __( 'Announcement Bar' ),
+      'description'    => __( 'Add a short announcement above the main menu' ),
+      'panel'          => '', // Not typically needed.
+      'priority'       => 160,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
+
+  Kirki::add_field( 'hugoandlily', array(
+  	'type'     => 'text',
+  	'settings' => 'announcement_text',
+  	'label'    => __( 'Announcement Text', 'hugoandlily' ),
+  	'section'  => 'announcement-bar',
+  	'default'  => esc_attr__( '', 'hugoandlily' ),
+  	'priority' => 10,
+  ) );
+}
