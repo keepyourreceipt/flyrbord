@@ -1,12 +1,44 @@
-.woocommerce div.product form.cart div.quantity,
-.woocommerce div.product form.cart .button
-  float: right
+.woocommerce table.shop_table .woocommerce-cart-form__cart-item td
+  padding: 1.5em 12px
+
+.woocommerce-cart table.cart td.actions .coupon .input-text
+  width: 50%
+
+.woocommerce-checkout
+  .page-content
+    padding-bottom: 100px
 
 .woocommerce
 
-  .quantity
+  .woocommerce-additional-fields
+    margin-top: 3em
+
+  div.product
+    form.cart
+      .button
+        float: right
+
+  .product_meta
+    font-size: 0.85em
+
+    > span
+      display: block
+
+  &.single-product
+    .quantity
+      label
+        float: left
+        font-weight: 700
+        font-size: 20px
+        line-height: 38px
+        margin-right: 2em
+
+        @media screen and ( max-width: 1200px )
+          margin-right: 1em
+
     input[type="number"]
-      padding: 17px 12px
+      float: left
+      // padding: 17px 12px
 
   td.label
     font-size: 1.25em

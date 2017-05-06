@@ -9,4 +9,6 @@ jQuery( document ).ready(function( $ ) {
     toggleMobileMenu();
   });
 
+  $('.woocommerce-checkout input, .woocommerce-checkout select, .input-text').addClass( 'form-control' );
+
 });

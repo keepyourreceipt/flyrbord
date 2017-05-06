@@ -83,6 +83,16 @@ function hugoandlily_widgets_init() {
 }
 add_action( 'widgets_init', 'hugoandlily_widgets_init' );
 
+// Remove woo commerce skus
+function sv_remove_product_page_skus( $enabled ) {
+    if ( ! is_admin() && is_product() ) {
+        return false;
+    }
+
+    return $enabled;
+}
+add_filter( 'wc_product_sku_enabled', 'sv_remove_product_page_skus' );
+
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
@@ -96,7 +106,7 @@ if (!function_exists('loop_columns')) {
 function grd_woocommerce_script_cleaner() {
 
   // Unless we're in the store, remove all the cruft!
-	if ( is_archive() ) {
+	if ( is_archive() || is_checkout() ) {
 		wp_dequeue_style( 'woocommerce-layout' );
 	}
 }
@@ -125,4 +135,14 @@ if(class_exists('Kirki')) {
   	'default'  => esc_attr__( '', 'hugoandlily' ),
   	'priority' => 10,
   ) );
+}
+
+
+
+// Hide coupon code
+
+add_filter( 'woocommerce_cart_totals_coupon_label', 'hide_coupon_code' );
+
+function hide_coupon_code() {
+    echo 'Coupon Applied!'; // WRITE HERE WHATEVER YOU LIKE
 }
