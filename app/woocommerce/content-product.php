@@ -30,7 +30,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 <li <?php post_class(); ?>>
     <?php
-      if ( is_shop() ) {
+      if ( is_shop() || is_product_category() || is_product_tag() ) {
         echo '<div class="col-sm-6 col-md-4">';
       }
     ?>

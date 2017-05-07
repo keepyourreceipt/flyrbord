@@ -13,6 +13,6 @@ jQuery( document ).ready(function( $ ) {
   });
 
   // Add form classes to checkout form
-  $('.woocommerce-checkout input, .woocommerce-checkout select, .input-text').addClass( 'form-control' );
+  $('.woocommerce-checkout input, .woocommerce-checkout select, .input-text, .comment-form-comment textarea').addClass( 'form-control' );
 
 });

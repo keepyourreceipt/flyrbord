@@ -93,6 +93,14 @@ function sv_remove_product_page_skus( $enabled ) {
 }
 add_filter( 'wc_product_sku_enabled', 'sv_remove_product_page_skus' );
 
+add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
+
+   function remove_add_to_cart_buttons() {
+     if( is_product_category() || is_shop()) {
+       remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+     }
+   }
+
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
