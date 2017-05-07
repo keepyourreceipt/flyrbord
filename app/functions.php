@@ -136,13 +136,3 @@ if(class_exists('Kirki')) {
   	'priority' => 10,
   ) );
 }
-
-
-
-// Hide coupon code
-
-add_filter( 'woocommerce_cart_totals_coupon_label', 'hide_coupon_code' );
-
-function hide_coupon_code() {
-    echo 'Coupon Applied!'; // WRITE HERE WHATEVER YOU LIKE
-}

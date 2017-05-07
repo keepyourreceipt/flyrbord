@@ -157,7 +157,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	  </div>
 
 
-	  <div class="col-sm-4 pull-right">
+	  <div class="col-sm-12 col-md-6 pull-right">
 	    <div class="cart-collaterals">
 	    	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 				<div class="cart-sidebar">

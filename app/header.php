@@ -14,6 +14,8 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+    <div class="pre-loader" style="display: block; position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; background: #fff; z-index: 999;"></div>
+
     <div class="announcement-bar container-fluid">
       <div class="row">
         <div class="container">
