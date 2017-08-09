@@ -6,35 +6,25 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
     <div class="pre-loader" style="display: block; position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; background: #fff; z-index: 999;"></div>
 
-    <div class="announcement-bar container-fluid">
+    <div class="container-fluid announcement-bar">
       <div class="row">
         <div class="container">
           <div class="row">
             <?php $announcement_text = get_theme_mod( 'announcement_text', '' ); ?>
             <?php if ( $announcement_text ) { ?>
-              <div class="col-sm-12 col-md-6">
+              <div class="col-xs-12 content">
                 <p><?php echo $announcement_text; ?></p>
               </div>
             <?php } ?>
-            <?php if ( $announcement_text ) {
-              $contact_classes = "col-md-6 text-right hidden-xs hidden-sm";
-            } else {
-              $contact_classes = "col-md-12 text-right hidden-xs hidden-sm";
-            } ?>
-            <div class="<?php echo $contact_classes; ?>">
-              <a href="mailto:info@example.com">sales@example.com</a>
-              <a href="tel:5555555555">555-555-5555</a>
-            </div>
           </div>
         </div>
       </div>
@@ -55,7 +45,7 @@
                   </a>
                 <?php } ?>
               </div>
-              <div class="main-menu-items col-sm-8 hidden-xs hidden-sm center-text">
+              <div class="main-menu-items col-sm-8 hidden-xs hidden-sm center-text navigation-links">
                 <?php wp_nav_menu( array(
                     'theme_location' => 'main_navigation_menu',
                     'container'=> false,
