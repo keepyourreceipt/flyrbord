@@ -1,28 +1,20 @@
-<?php
-  get_header(); ?>
-
+<?php get_header(); ?>
 <div class="row">
-  <div clas="col-md-8">
-
-  <?php
-  if( have_posts() ) {
-    while( have_posts() ) {
-      the_post();
-      ?>
-
-      <h2><?php the_title(); ?></h2>
-      <p><?php the_excerpt(); ?></p>
-      <a href="<?php the_permalink(); ?>">permalink</a>
-
-      <?php
-    }
-  } ?>
-
-  </div class="col-md-4">
+  <div class="col-md-8 post-collection">
+    <?php
+    if( have_posts() ) {
+      while( have_posts() ) {
+        the_post();
+        ?>
+        <h2><?php the_title(); ?></h2>
+        <p><?php the_excerpt(); ?></p>
+        <a href="<?php the_permalink(); ?>">permalink</a>
+        <?php
+      }
+    } ?>
+  </div><!-- end post-collection -->
+  <div class="col-md-4 sidebar">
     <?php get_sidebar(); ?>
-  </div>
-  
+  </div><!-- end sidebar -->
 </div>
-  <?php
-  get_footer();
-?>
+<?php get_footer(); ?>

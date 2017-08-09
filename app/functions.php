@@ -80,6 +80,15 @@ function flyrbord_widgets_init() {
     'after_title'   => '</h2>',
   ) );
 
+  register_sidebar( array(
+		'name'          => 'Sidebar Left',
+		'id'            => 'sidebar-left',
+		'before_widget' => '<div class="footer-widget col-sm-3 center-block">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
 }
 add_action( 'widgets_init', 'flyrbord_widgets_init' );
 
