@@ -19,9 +19,9 @@ jQuery( document ).ready(function( $ ) {
   // Toggle sub-menu on hover
   $('ul.menu > li').hover(
     function() {
-      $( this ).find('.sub-menu').stop().fadeIn(125);
+      $( this ).find('.sub-menu').stop().slideDown(100);
     }, function() {
-      $( this ).find('.sub-menu').stop().fadeOut(125);
+      $( this ).find('.sub-menu').stop().fadeOut(50);
     }
   );
 
