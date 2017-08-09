@@ -6,6 +6,12 @@ var clean = require('gulp-clean');
 var concatCss = require('gulp-concat-css');
 var concat = require('gulp-concat');
 
+// Theme screeshot //
+gulp.task('theme-screenshot', function () {
+  return gulp.src('./app/screenshot/screenshot.png')
+    .pipe( gulp.dest('./dist') );
+});
+
 // CSS //
 gulp.task('css', ['combine-css'], function () {
   return gulp.src('./app/css/**/*', { read: false} )
@@ -105,4 +111,4 @@ gulp.task('watch', function() {
     gulp.watch( './app/js/**/*.js', ['js'] );
 });
 
-gulp.task('default', ['template-files', 'vendor-fonts', 'css', 'js']);
+gulp.task('default', ['template-files', 'vendor-fonts', 'css', 'js', 'theme-screenshot']);

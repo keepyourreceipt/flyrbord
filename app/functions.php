@@ -7,15 +7,15 @@ require_once get_template_directory() . '/inc/kirki/include-kirki.php';
 /**
  * Enqueue a script with jQuery as a dependency.
  */
-function include_hugoandlily_scripts() {
+function include_flyrbord_scripts() {
     // These scripts
-    wp_enqueue_script( 'hugoandlily-scripts', get_template_directory_uri() . '/js/bundle.js', array( 'jquery' ) );
+    wp_enqueue_script( 'flyrbord-scripts', get_template_directory_uri() . '/js/bundle.js', array( 'jquery' ) );
 
     // Theme stylesheets
     wp_enqueue_style( 'style', get_stylesheet_uri() );
-    wp_enqueue_style( 'hugoandlily-style', get_template_directory_uri() . '/css/bundle.css' );
+    wp_enqueue_style( 'flyrbord-style', get_template_directory_uri() . '/css/bundle.css' );
 }
-add_action( 'wp_enqueue_scripts', 'include_hugoandlily_scripts' );
+add_action( 'wp_enqueue_scripts', 'include_flyrbord_scripts' );
 
 /**
  * Add theme support for basic features
@@ -51,7 +51,7 @@ register_nav_menus( array(
  * Register widget areas
  *
  */
-function hugoandlily_widgets_init() {
+function flyrbord_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => 'Footer',
@@ -81,7 +81,7 @@ function hugoandlily_widgets_init() {
   ) );
 
 }
-add_action( 'widgets_init', 'hugoandlily_widgets_init' );
+add_action( 'widgets_init', 'flyrbord_widgets_init' );
 
 // Remove woo commerce skus
 function sv_remove_product_page_skus( $enabled ) {
@@ -121,7 +121,7 @@ function grd_woocommerce_script_cleaner() {
 add_action( 'wp_enqueue_scripts', 'grd_woocommerce_script_cleaner', 99 );
 
 if(class_exists('Kirki')) {
-  Kirki::add_config( 'hugoandlily', array(
+  Kirki::add_config( 'flyrbord', array(
   	'capability'    => 'edit_theme_options',
   	'option_type'   => 'theme_mod',
   ) );
@@ -135,12 +135,12 @@ if(class_exists('Kirki')) {
       'theme_supports' => '', // Rarely needed.
   ) );
 
-  Kirki::add_field( 'hugoandlily', array(
+  Kirki::add_field( 'flyrbord', array(
   	'type'     => 'text',
   	'settings' => 'announcement_text',
-  	'label'    => __( 'Announcement Text', 'hugoandlily' ),
+  	'label'    => __( 'Announcement Text', 'flyrbord' ),
   	'section'  => 'announcement-bar',
-  	'default'  => esc_attr__( '', 'hugoandlily' ),
+  	'default'  => esc_attr__( '', 'flyrbord' ),
   	'priority' => 10,
   ) );
 }
