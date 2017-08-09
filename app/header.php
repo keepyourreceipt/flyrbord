@@ -22,14 +22,14 @@
           <div class="row">
             <?php $announcement_text = get_theme_mod( 'announcement_text', '' ); ?>
             <?php if ( $announcement_text ) { ?>
-              <div class="col-sm-6">
+              <div class="col-sm-12 col-md-6">
                 <p><?php echo $announcement_text; ?></p>
               </div>
             <?php } ?>
             <?php if ( $announcement_text ) {
-              $contact_classes = "col-sm-6 text-right hidden-xs hidden-sm";
+              $contact_classes = "col-md-6 text-right hidden-xs hidden-sm";
             } else {
-              $contact_classes = "col-sm-12 text-right hidden-xs hidden-sm";
+              $contact_classes = "col-md-12 text-right hidden-xs hidden-sm";
             } ?>
             <div class="<?php echo $contact_classes; ?>">
               <a href="mailto:info@example.com">sales@example.com</a>
