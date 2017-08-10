@@ -11,13 +11,15 @@ jQuery( document ).ready(function( $ ) {
   function toggleDesktopNavigation() {
 
     $('ul.menu > li').mouseleave( function() {
-      $( this ).find('.sub-menu').fadeOut(100);
+      // $( this ).find('.sub-menu').fadeOut(100);
+      $( this ).find('.sub-menu').removeClass('active');
     });
 
     $('ul.menu > li').on('mouseenter', function(e){
         var timer = setTimeout(function() {
             var target = $( e.target );
-            target.parent().find('.sub-menu').slideDown(125);
+            // target.parent().find('.sub-menu').slideDown(125);
+            target.parent().find('.sub-menu').addClass('active');
         },  250);
         $(this).data('hoverTimer', timer);
     }).on('mouseleave', $('ul.menu > li'), function(e){

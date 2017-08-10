@@ -33,7 +33,7 @@
     <div class="main-menu container-fluid">
       <div class="row">
         <div class="container">
-          <div class="row">
+          <div class="row content">
             <div class="main-menu-logo col-xs-6 col-sm-6 col-md-2">
               <?php
                 if ( get_theme_mod( 'custom_logo' ) ) {

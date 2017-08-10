@@ -1,21 +1,40 @@
 .main-menu
   background-color: #23282d
   position: relative
-  z-index: 9999
+  z-index: 9
 
   .navigation-links
     position: inherit
+
+  .content
+    &:before
+      content: ""
+      height: 100%
+      width: 100%
+      // Menu background color
+      background: #232323
+      display: inline-block
+      position: absolute
+      top: 0px
+      left: 0px
+      z-index: -1
 
   ul.menu
     > li.menu-item
       > ul.sub-menu
         width: 100vw
         position: absolute
-        background: #232323
+        background: #323232
         left: 0px
         min-height: 40px
         backface-visibility: hidden
-        display: none                  
+        top: -100%
+        transition: top 0.25s ease
+        z-index: -9
+
+        &.active
+          top: 100%
+          transition: top 0.35s ease
 
   .menu-logo
     max-height: 70px
