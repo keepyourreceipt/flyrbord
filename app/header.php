@@ -34,7 +34,7 @@
       <div class="row">
         <div class="container">
           <div class="row content">
-            <div class="main-menu-logo col-xs-6 col-sm-6 col-md-2">
+            <div class="main-menu-logo col-xs-6 col-sm-6 col-md-2 navigation-logo">
               <?php
                 if ( get_theme_mod( 'custom_logo' ) ) {
                   $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -52,24 +52,8 @@
                     'fallback_cb' => 'default_header_nav'
                   )); ?>
               </div>
-              <div class="main-menu-tools hidden-xs hidden-sm col-sm-2 text-right">
-                <?php
-                  global $woocommerce;
-                  $cart_url = $woocommerce->cart->get_cart_url();
-                ?>
-                <a href="<?php echo $cart_url; ?>">
-                  <span class="glyphicon glyphicon-shopping-cart"></span>
-                  <?php
-                    $products_in_cart = $woocommerce->cart->cart_contents;
-                    $product_count = count( $products_in_cart );
-                  ?>
-                  <span>
-                    (<?php echo $product_count; ?>)
-                  </span>
-                </a>
-                <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                </a>
+              <div class="col-sm-2 text-right navigation-search">
+                <span>Search&nbsp;<i class="fa fa-search" aria-hidden="true"></i></span>
               </div>
               <div class="mobile-menu-toggle open col-xs-6 col-sm-6 visible-xs visible-sm">
                 <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<span>MENU</span>
@@ -77,6 +61,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="navigation-search-form">
+      <?php // get_search_form(); ?>
     </div>
 
     <div class="mobile-menu visible-xs visible-sm">
