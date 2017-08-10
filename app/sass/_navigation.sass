@@ -26,15 +26,20 @@
         position: absolute
         background: #323232
         left: 0px
-        min-height: 40px
         backface-visibility: hidden
         top: -100%
-        transition: top 0.25s ease
+        transition: top 0.3s ease-in, opacity 0.5s ease
         z-index: -9
+        opacity: 0
+
+        a
+          line-height: 55px
 
         &.active
           top: 100%
-          transition: top 0.35s ease
+          transition: top 0.3s ease-out, opacity 0.2s ease
+          visibility: visible
+          opacity: 1
 
   .menu-logo
     max-height: 70px
@@ -57,7 +62,7 @@
     a
       text-decoration: none
       color: $white
-      line-height: 79px
+      line-height: 80px
       text-transform: uppercase
       font-size: 0.8em
       letter-spacing: 0.75px
