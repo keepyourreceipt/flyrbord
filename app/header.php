@@ -72,7 +72,7 @@
                 </a>
               </div>
               <div class="mobile-menu-toggle open col-xs-6 col-sm-6 visible-xs visible-sm">
-                <span>MENU</span>&nbsp;<span class="glyphicon glyphicon-menu-hamburger"></span>
+                <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<span>MENU</span>
               </div>
           </div>
         </div>
@@ -81,7 +81,7 @@
 
     <div class="mobile-menu visible-xs visible-sm">
       <div class="mobile-menu-toggle close">
-        <span>CLOSE</span>&nbsp;<span class="glyphicon glyphicon-remove"></span>
+        <span>CLOSE</span>&nbsp;<i class="fa fa-times" aria-hidden="true"></i>
       </div>
       <h4>Menu</h4>
       <?php wp_nav_menu( array( 'theme_location' => 'main_navigation_menu', 'fallback_cb' => 'default_header_nav') ); ?>
