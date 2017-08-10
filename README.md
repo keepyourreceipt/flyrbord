@@ -4,6 +4,9 @@ The Flyrbord theme is designed to support small businesses by offering a flexibl
 
 ### Build Commands
 `npm install`
+
 `bower install`
+
 `gulp` <- builds project and exits process (ideal for CI / release)
+
 `gulp watch` <- ideal for dev
