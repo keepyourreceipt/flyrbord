@@ -9,14 +9,15 @@ jQuery( document ).ready(function( $ ) {
   }
 
   function toggleDesktopNavigation() {
+
     $('ul.menu > li').mouseleave( function() {
-      $( this ).find('.sub-menu').stop().fadeOut(100);
+      $( this ).find('.sub-menu').fadeOut(100);
     });
 
     $('ul.menu > li').on('mouseenter', function(e){
         var timer = setTimeout(function() {
             var target = $( e.target );
-            target.parent().find('.sub-menu').stop().slideDown(125);
+            target.parent().find('.sub-menu').slideDown(125);
         },  250);
         $(this).data('hoverTimer', timer);
     }).on('mouseleave', $('ul.menu > li'), function(e){

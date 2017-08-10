@@ -26,7 +26,8 @@ gulp.task('combine-css', ['vendor-css'], function () {
 
 gulp.task('vendor-css', ['sass'], function () {
   return gulp.src([
-    './bower_components/bootstrap/dist/css/bootstrap.css'
+    './bower_components/bootstrap/dist/css/bootstrap.css',
+    './bower_components/components-font-awesome/css/font-awesome.css'
   ])
     .pipe( gulp.dest('./app/css') );
 });
@@ -98,7 +99,8 @@ gulp.task('clean-js', function () {
 
 gulp.task('vendor-fonts', function () {
   return gulp.src([
-    './bower_components/bootstrap/dist/fonts/**.*'
+    './bower_components/bootstrap/dist/fonts/**.*',
+    './bower_components/components-font-awesome/fonts/**.*'
   ])
     .pipe( gulp.dest('./dist/fonts') );
 });

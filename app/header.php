@@ -68,7 +68,7 @@
                   </span>
                 </a>
                 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
-                  <span class="glyphicon glyphicon-user"></span>
+                  <i class="fa fa-user" aria-hidden="true"></i>
                 </a>
               </div>
               <div class="mobile-menu-toggle open col-xs-6 col-sm-6 visible-xs visible-sm">
