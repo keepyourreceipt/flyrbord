@@ -56,7 +56,7 @@ function flyrbord_widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Footer',
 		'id'            => 'footer',
-		'before_widget' => '<div class="footer-widget col-sm-3 center-block">',
+		'before_widget' => '<div class="footer-widget col-sm-12 center-block">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
@@ -83,7 +83,7 @@ function flyrbord_widgets_init() {
   register_sidebar( array(
 		'name'          => 'Sidebar Left',
 		'id'            => 'sidebar-left',
-		'before_widget' => '<div class="footer-widget col-sm-3 center-block">',
+		'before_widget' => '<div class="col-sm-12 left-sidebar-widget">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',

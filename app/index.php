@@ -14,7 +14,9 @@
     } ?>
   </div><!-- end post-collection -->
   <div class="col-md-4 sidebar">
-    <?php get_sidebar(); ?>
+    <div class="row">
+      <?php get_sidebar(); ?>
+    </div>
   </div><!-- end sidebar -->
 </div>
 <?php get_footer(); ?>
