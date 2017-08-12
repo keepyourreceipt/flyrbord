@@ -1,5 +1,5 @@
 .main-menu
-  background-color: #23282d
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19), 0 2px 7px rgba(0, 0, 0, 0.23)
   position: relative
   z-index: 9
 
@@ -12,7 +12,7 @@
       height: 100%
       width: 100%
       // Menu background color
-      background: #232323
+      background: linear-gradient(0deg,#303c42 0%,#37424b 100%)
       display: inline-block
       position: absolute
       top: 0px
@@ -24,7 +24,7 @@
       > ul.sub-menu
         width: 100vw
         position: absolute
-        background: #323232
+        background: #455a64
         left: 0px
         backface-visibility: hidden
         top: -100%
@@ -41,10 +41,18 @@
           visibility: visible
           opacity: 1
 
-  .menu-logo
-    max-height: 70px
-    padding-top: 10px
-    margin-bottom: 10px
+  .navigation-logo
+
+    .menu-logo
+      max-height: 66px
+      padding-top: 8px
+      padding-bottom: 8px
+
+    @media screen and ( max-width: 992px )
+      text-align: center
+
+      .menu-logo
+        max-height: 66px
 
   .main-menu-items
     text-align: center
@@ -62,7 +70,7 @@
     a
       text-decoration: none
       color: $white
-      line-height: 80px
+      line-height: 66px
       text-transform: uppercase
       font-size: 0.8em
       letter-spacing: 0.75px
@@ -74,27 +82,14 @@
       &:hover
         background: rgba(0,0,0,0.1)
 
-  .main-menu-tools
-    a
-      text-decoration: none
-      color: $white
-      line-height: 80px
-      text-transform: uppercase
-      font-size: 0.85em
-      letter-spacing: 0.75px
-      font-weight: 300
-      display: inline-block
-      margin-left: 10px
-
   .mobile-menu-toggle
-    font-size: 1.2em
+    font-size: 1em
     color: $white
-    text-align: right
-    line-height: 80px
+    line-height: 66px
     cursor: pointer
 
   .navigation-search
-    line-height: 79px
+    line-height: 65px
     color: #fff
 
     span
@@ -104,6 +99,8 @@
       font-weight: 300
       display: inline-block
 
+    @media screen and ( max-width: 992px )
+      line-height: 66px
 
 .mobile-menu
   position: fixed
@@ -121,7 +118,7 @@
     &.close
       width: 100%
       text-align: right
-      line-height: 60px
+      line-height: 66px
 
   ul
     padding-left: 0

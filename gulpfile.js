@@ -109,6 +109,7 @@ gulp.task('vendor-fonts', function () {
 gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['css'] );
     gulp.watch( './app/*.php', ['template-files'] );
+    gulp.watch( './app/inc/template-partials/*.php', ['template-files'] );
     gulp.watch( './app/woocommerce/**/*', ['template-files'] );
     gulp.watch( './app/js/**/*.js', ['js'] );
 });

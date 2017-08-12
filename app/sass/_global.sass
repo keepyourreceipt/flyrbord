@@ -16,20 +16,23 @@ h1, h2, h3, h4, h5, h6
   z-index: 99
   background: #fff
 
-  .content
-    p
-      padding: 10px 0
-      font-size: 0.75em
-      margin-bottom: 0
+  p
+    padding: 10px 0
+    font-size: 0.75em
+    margin-bottom: 0
 
-    a
-      text-decoration: none
-      color: $dark-gray
-      font-size: 0.75em
-      padding: 10px 0
-      display: inline-block
-      margin-left: 10px
+  a, span
+    text-decoration: none
+    color: $dark-gray
+    font-size: 0.75em
+    padding: 10px 0
+    display: inline-block
+    margin-left: 10px
 
+  .contact-info
+    text-align: right
+
+  .announcement-text
     @media screen and ( max-width: 992px )
       text-align: center
 
@@ -38,8 +41,17 @@ h1, h2, h3, h4, h5, h6
     font-size: 1.1em
 
 footer
-  background-color: $dark-gray
+  background: linear-gradient(0deg,#303c42 0%,#37424b 100%)
   padding: 15px 0
+
+  .social-media-icons
+    text-align: center    
+
+    a
+      color: #fff
+      font-size: 1.1em
+      padding: 5px
+
 
   .footer-widget
 
@@ -61,7 +73,7 @@ footer
 
 
   &.copyright
-    background-color: $black
+    background-color: #455a64
     text-align: center
     color: $white
     padding: 5px 0

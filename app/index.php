@@ -70,7 +70,9 @@
 
   <?php
     // If Blog Sidebar has active widgets, include sidebar template
-    if ( $has_sidebar ) { get_sidebar( 'blog' ); }
+    if ( $has_sidebar ) {
+      get_sidebar();
+    }
   ?>
 </div>
 <?php get_footer(); ?>

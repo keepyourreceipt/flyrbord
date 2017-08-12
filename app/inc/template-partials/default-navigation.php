@@ -2,7 +2,10 @@
   <div class="row">
     <div class="container">
       <div class="row content">
-        <div class="main-menu-logo col-xs-6 col-sm-6 col-md-2 navigation-logo">
+        <div class="mobile-menu-toggle open col-xs-2 col-sm-2 visible-xs visible-sm">
+          <i class="fa fa-align-left" aria-hidden="true"></i>
+        </div>
+        <div class="main-menu-logo col-xs-8 col-sm-8 col-md-2 navigation-logo">
           <?php
             if ( get_theme_mod( 'custom_logo' ) ) {
               $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -20,11 +23,8 @@
                 'fallback_cb' => 'default_header_nav'
               )); ?>
           </div>
-          <div class="col-sm-2 text-right navigation-search">
-            <span>Search&nbsp;&nbsp;<i class="fa fa-search" aria-hidden="true"></i></span>
-          </div>
-          <div class="mobile-menu-toggle open col-xs-6 col-sm-6 visible-xs visible-sm">
-            <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<span>MENU</span>
+          <div class="col-xs-2 text-right navigation-search">
+            <span class="hidden-xs hidden-sm">Search&nbsp;&nbsp;</span><i class="fa fa-search" aria-hidden="true"></i>
           </div>
       </div>
     </div>

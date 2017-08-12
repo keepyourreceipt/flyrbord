@@ -12,12 +12,20 @@
             <?php } ?>
           </div>
           <div class="row">
-            <?php
-              if ( get_theme_mod( 'facebook_account_link' ) ) { ?>
-                Facebook: <i class="fa fa-facebook-official" aria-hidden="true"></i>
-              <?php
-              }
-            ?>
+            <div class="col-sm-12 social-media-icons">
+              <?php if ( get_theme_mod( 'facebook_account_link' ) ) { ?>
+                  <a href="<?php echo get_theme_mod( 'facebook_account_link' ); ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <?php } ?>
+              <?php if ( get_theme_mod( 'twitter_account_link' ) ) { ?>
+                  <a href="<?php echo get_theme_mod( 'twitter_account_link' ); ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <?php } ?>
+              <?php if ( get_theme_mod( 'facebook_account_link' ) ) { ?>
+                  <a href="<?php echo get_theme_mod( 'facebook_account_link' ); ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <?php } ?>
+              <?php if ( get_theme_mod( 'facebook_account_link' ) ) { ?>
+                  <a href="<?php echo get_theme_mod( 'facebook_account_link' ); ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <?php } ?>
+            </div>
           </div>
         </div>
       </div>
