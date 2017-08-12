@@ -101,7 +101,6 @@ if (!function_exists('loop_columns')) {
 	}
 }
 
-
 if(class_exists('Kirki')) {
   Kirki::add_config( 'flyrbord', array(
   	'capability'    => 'edit_theme_options',

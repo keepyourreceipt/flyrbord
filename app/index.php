@@ -1,4 +1,17 @@
 <?php get_header(); ?>
+
+<?php if( is_archive() ) { ?>
+  <div class="row">
+    <h2><?php the_archive_title(); ?></h2>
+  </div>
+<?php } ?>
+
+<?php if( is_search() ) { ?>
+  <div class="row">
+    <h2>Seach Results: <?php echo get_search_query(); ?></h2>
+  </div>
+<?php } ?>
+
 <div class="row">
   <?php
     $hase_sidebar = false;
@@ -20,12 +33,21 @@
               the_post_thumbnail('large');
           }
         ?>
-        <h2><?php echo get_the_title(); ?></h2>
-        <p><?php echo get_the_excerpt(); ?></p>
+        <h2><?php the_title(); ?></h2>
+        <p><?php the_excerpt(); ?></p>
         <a href="<?php the_permalink(); ?>">Read more</a>
         <?php
       }
-    } ?>
+    } else {
+      if ( is_search() ) { ?>
+
+        <h2>No search reults found.</h2>
+        <p>Please try searching again. If you've landed here in error, please contact us.</p>
+
+      <?php }
+    }
+
+    ?>
 
     <div class="row">
       <div class="col-sm-12">
@@ -50,7 +72,5 @@
     // If Blog Sidebar has active widgets, include sidebar template
     if ( $has_sidebar ) { get_sidebar( 'blog' ); }
   ?>
-
-
 </div>
 <?php get_footer(); ?>
