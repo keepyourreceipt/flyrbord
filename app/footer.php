@@ -11,6 +11,14 @@
             	<?php dynamic_sidebar( 'footer' ); ?>
             <?php } ?>
           </div>
+          <div class="row">            
+            <?php
+              if ( get_theme_mod( 'facebook_account_link' ) ) { ?>
+                Facebook: <i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <?php
+              }
+            ?>
+          </div>
         </div>
       </div>
     </div>

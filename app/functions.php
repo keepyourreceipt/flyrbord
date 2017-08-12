@@ -92,6 +92,7 @@ function flyrbord_widgets_init() {
 }
 add_action( 'widgets_init', 'flyrbord_widgets_init' );
 
+
 // Remove woo commerce skus
 function sv_remove_product_page_skus( $enabled ) {
     if ( ! is_admin() && is_product() ) {
@@ -114,20 +115,10 @@ add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
 	function loop_columns() {
-		return 3; // 3 products per row
+		return 4; // 3 products per row
 	}
 }
-/**
- * Manage WooCommerce styles and scripts.
- */
-function grd_woocommerce_script_cleaner() {
 
-  // Unless we're in the store, remove all the cruft!
-	if ( is_archive() || is_checkout() ) {
-		wp_dequeue_style( 'woocommerce-layout' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'grd_woocommerce_script_cleaner', 99 );
 
 if(class_exists('Kirki')) {
   Kirki::add_config( 'flyrbord', array(

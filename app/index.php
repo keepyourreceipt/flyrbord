@@ -13,10 +13,14 @@
       }
     } ?>
   </div><!-- end post-collection -->
-  <div class="col-md-4 sidebar">
-    <div class="row">
-      <?php get_sidebar(); ?>
+
+  <?php if( ! is_woocommerce() ) { ?>
+    <div class="col-md-4 sidebar">
+      <div class="row">
+        <?php get_sidebar(); ?>
+      </div>
     </div>
-  </div><!-- end sidebar -->
+  <?php } ?><!-- end sidebar -->
+
 </div>
 <?php get_footer(); ?>
