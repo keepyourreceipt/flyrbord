@@ -63,31 +63,13 @@ function flyrbord_widgets_init() {
 	) );
 
   register_sidebar( array(
-    'name'          => 'Shop Sidebar',
-    'id'            => 'shop_sidebar',
-    'before_widget' => '<div class="shop-widget-container">',
+    'name'          => 'Blog Sidebar',
+    'id'            => 'blog_sidebar',
+    'before_widget' => '<div class="col-sm-12 blog-widget">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2>',
     'after_title'   => '</h2>',
   ) );
-
-  register_sidebar( array(
-    'name'          => 'News Sidebar',
-    'id'            => 'news_sidebar',
-    'before_widget' => '<div class="news-widget-container">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h2>',
-    'after_title'   => '</h2>',
-  ) );
-
-  register_sidebar( array(
-		'name'          => 'Sidebar Left',
-		'id'            => 'sidebar-left',
-		'before_widget' => '<div class="col-sm-12 left-sidebar-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-	) );
 
 }
 add_action( 'widgets_init', 'flyrbord_widgets_init' );
