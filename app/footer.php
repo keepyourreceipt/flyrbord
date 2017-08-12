@@ -1,6 +1,6 @@
 
     </div><!-- /.container -->
-  </div><!-- /.page-content -->
+  </main><!-- /.page-content -->
 
   <footer>
     <div class="container-fluid">
@@ -11,7 +11,7 @@
             	<?php dynamic_sidebar( 'footer' ); ?>
             <?php } ?>
           </div>
-          <div class="row">            
+          <div class="row">
             <?php
               if ( get_theme_mod( 'facebook_account_link' ) ) { ?>
                 Facebook: <i class="fa fa-facebook-official" aria-hidden="true"></i>
