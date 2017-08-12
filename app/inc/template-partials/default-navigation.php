@@ -29,16 +29,24 @@
       </div>
     </div>
   </div>
+
+  <div class="mobile-menu">
+    <div class="row">
+      <div class="container">
+        <div class="row mobile-menu-fix">
+          <?php wp_nav_menu( array(
+            'theme_location' => 'main_navigation_menu',
+            'fallback_cb' => 'default_header_nav',
+            'container' => '',
+            'menu_class'=> 'col-sm-12 mobile-navigation-links'
+          ) ); ?>
+        </div>
+      </div>
+    </div>
+  </div><!-- End mobile menu -->
+
 </div>
 
 <div class="navigation-search-form">
   <?php // get_search_form(); ?>
-</div>
-
-<div class="mobile-menu visible-xs visible-sm">
-  <div class="mobile-menu-toggle close">
-    <span>CLOSE</span>&nbsp;<i class="fa fa-times" aria-hidden="true"></i>
-  </div>
-  <h4>Menu</h4>
-  <?php wp_nav_menu( array( 'theme_location' => 'main_navigation_menu', 'fallback_cb' => 'default_header_nav') ); ?>
 </div>

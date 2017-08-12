@@ -3,16 +3,15 @@ jQuery( document ).ready(function( $ ) {
   // Setup theme functions (see function definitions below)
   init();
 
-  function toggleMobileMenu() {
-    // On click, toggle mobile menu open and closed
-    var mobileMenu = $('.mobile-menu');
-    mobileMenu.toggleClass( 'active' );
-  }
+  // Toggle mobile menu on click
+  $('.mobile-menu-toggle').click(function() {
+    $('.mobile-menu').slideToggle();
+  });
 
   function toggleDesktopNavigation() {
     // On mouse leave, remove the active sub-menu class to
     // close the active sub-menu
-    $('ul.menu > li').mouseleave( function() {
+    $('ul.menu > li').not('.mobile-menu').mouseleave( function() {
       $( this ).find('.sub-menu').removeClass('active');
     });
 
@@ -28,14 +27,13 @@ jQuery( document ).ready(function( $ ) {
     });
   }
 
+  $('.mobile-menu ul > li.menu-item-has-children').not('a').click(function() {
+    $(this).find('.sub-menu').slideToggle();
+  });
+
   function init() {
     // Hide pre-loader when page is loaded
     $('.pre-loader').fadeOut(400);
-
-    // Toggle mobile menu on click
-    $('.mobile-menu-toggle > span').on('click', function() {
-      toggleMobileMenu();
-    });
 
     // Setup menu functionality
     toggleDesktopNavigation();

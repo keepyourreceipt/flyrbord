@@ -17,13 +17,16 @@
                   <a href="<?php echo get_theme_mod( 'facebook_account_link' ); ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i>
               <?php } ?>
               <?php if ( get_theme_mod( 'twitter_account_link' ) ) { ?>
-                  <a href="<?php echo get_theme_mod( 'twitter_account_link' ); ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+                  <a href="<?php echo get_theme_mod( 'twitter_account_link' ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i>
               <?php } ?>
-              <?php if ( get_theme_mod( 'facebook_account_link' ) ) { ?>
-                  <a href="<?php echo get_theme_mod( 'facebook_account_link' ); ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <?php if ( get_theme_mod( 'instagram_account_link' ) ) { ?>
+                  <a href="<?php echo get_theme_mod( 'instagram_account_link' ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i>
               <?php } ?>
-              <?php if ( get_theme_mod( 'facebook_account_link' ) ) { ?>
-                  <a href="<?php echo get_theme_mod( 'facebook_account_link' ); ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <?php if ( get_theme_mod( 'pinterest_account_link' ) ) { ?>
+                  <a href="<?php echo get_theme_mod( 'pinterest_account_link' ); ?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i>
+              <?php } ?>
+              <?php if ( get_theme_mod( 'linkedin_account_link' ) ) { ?>
+                  <a href="<?php echo get_theme_mod( 'linked_account_link' ); ?>"><i class="fa fa-linkedin" aria-hidden="true"></i>
               <?php } ?>
             </div>
           </div>
