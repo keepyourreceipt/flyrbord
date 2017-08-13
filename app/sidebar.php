@@ -1,5 +1,5 @@
 <?php if( ! is_woocommerce() ) { ?>
-  <div class="col-md-4 sidebar">
+  <div class="col-sm-4 sidebar">
     <div class="row">
       <?php dynamic_sidebar( 'blog_sidebar' ); ?>
     </div>

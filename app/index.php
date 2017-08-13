@@ -19,7 +19,7 @@
       $has_sidebar = true;
       $posts_collection_classes = "col-sm-8";
     } else {
-      $posts_collection_classes = "col-sm-10 col-sm-offset-1";
+      $posts_collection_classes = "col-sm-12 col-md-offset-1 col-md-10";
     }
   ?>
   <div class="<?php echo $posts_collection_classes; ?> posts-collection">
@@ -27,15 +27,19 @@
     if( have_posts() ) {
       while( have_posts() ) {
         the_post();
-
-          // If post has thumbnail, display image
-          if ( has_post_thumbnail() ) {
-              the_post_thumbnail('large');
-          }
         ?>
-        <h2><?php the_title(); ?></h2>
-        <p><?php the_excerpt(); ?></p>
-        <a href="<?php the_permalink(); ?>">Read more</a>
+        <div class="post">
+          <?php
+          // If post has thumbnail, display image
+          if ( has_post_thumbnail() ) { ?>
+            <a href="<?php the_permalink(); ?>">
+              <?php the_post_thumbnail('large'); ?>
+            </a>
+          <?php } ?>
+          <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+          <p><?php the_excerpt(); ?></p>
+          <a href="<?php the_permalink(); ?>">Read more</a>
+        </div>
         <?php
       }
     } else {
