@@ -1,5 +1,6 @@
 <div class="main-menu container-fluid">
-  <div class="row">
+
+  <div class="row menu-container">
     <div class="container">
       <div class="row content">
         <div class="mobile-menu-toggle open col-xs-2 col-sm-2 visible-xs visible-sm">
@@ -15,30 +16,31 @@
                 <img class="menu-logo" src="<?php echo $image[0]; ?>" alt="Logo">
               </a>
             <?php } ?>
-          </div>
-          <div class="main-menu-items col-sm-8 hidden-xs hidden-sm center-text navigation-links">
-            <?php wp_nav_menu( array(
-                'theme_location' => 'main_navigation_menu',
-                'container'=> false,
-                'fallback_cb' => 'default_header_nav'
-              )); ?>
-          </div>
-          <div class="col-xs-2 text-right navigation-search">
-            <span class="hidden-xs hidden-sm">Search&nbsp;&nbsp;</span><i class="fa fa-search" aria-hidden="true"></i>
-          </div>
+        </div>
+        <div class="main-menu-items col-sm-8 hidden-xs hidden-sm center-text navigation-links">
+          <?php wp_nav_menu( array(
+              'theme_location' => 'main_navigation_menu',
+              'fallback_cb' => 'default_header_nav',
+              'container' => '',
+              'menu_class'=> 'menu'
+            )); ?>
+        </div>
+        <div class="col-xs-2 text-right navigation-search">
+          <span class="hidden-xs hidden-sm">Search&nbsp;&nbsp;</span><i class="fa fa-search" aria-hidden="true"></i>
+        </div>
       </div>
     </div>
-  </div>
+  </div> <!-- End desktop menu -->
 
-  <div class="mobile-menu">
-    <div class="row">
-      <div class="container">
-        <div class="row mobile-menu-fix">
+  <div class="row mobile-menu-container">
+    <div class="container">
+      <div class="row content">
+        <div class="col-sm-12 visible-xs visible-sm mobile-navigation-links">
           <?php wp_nav_menu( array(
             'theme_location' => 'main_navigation_menu',
             'fallback_cb' => 'default_header_nav',
             'container' => '',
-            'menu_class'=> 'col-sm-12 mobile-navigation-links'
+            'menu_class'=> 'mobile-menu'
           ) ); ?>
         </div>
       </div>

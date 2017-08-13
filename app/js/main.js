@@ -27,7 +27,7 @@ jQuery( document ).ready(function( $ ) {
     });
   }
 
-  $('.mobile-menu ul > li.menu-item-has-children').not('a').click(function() {
+  $('ul.mobile-menu > li.menu-item-has-children').not('a').click(function() {
     $(this).find('.sub-menu').slideToggle();
   });
 

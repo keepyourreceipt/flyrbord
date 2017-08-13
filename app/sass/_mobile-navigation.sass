@@ -1,0 +1,44 @@
+.mobile-menu-container
+  background: #455a64
+
+  .mobile-navigation-links
+
+    ul.mobile-menu
+      padding-left: 0
+
+      > li.menu-item
+        list-style: none
+
+        &.menu-item-has-children
+          background-image: url('../img/plus-icon.svg')
+          background-size: 14px
+          background-position-y: 9px
+          background-position-x: right
+          background-repeat: no-repeat
+
+          > a
+              width: calc( 100% - 32px )
+              display: block
+              position: relative
+
+        ul.sub-menu
+          padding-left: 0
+          display: none
+
+          li.menu-item
+            list-style: none
+
+    .mobile-menu
+      padding-top: 15px
+      padding-bottom: 15px
+      display: none
+
+      a
+        display: block
+        line-height: 32px
+        text-decoration: none
+        color: $white
+        text-transform: uppercase
+        font-size: 0.8em
+        letter-spacing: 0.75px
+        font-weight: 300

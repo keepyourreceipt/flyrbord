@@ -45,12 +45,19 @@ gulp.task('clean-css-dist', function () {
 
 
 // Template files //
-gulp.task('template-files', ['clean-template-files'], function () {
+gulp.task('template-files', ['images'], function () {
   return gulp.src([
       './app/**/*.php',
       './app/*.css'
   ])
     .pipe( gulp.dest('./dist') );
+});
+
+gulp.task('images', ['clean-template-files'], function() {
+  return gulp.src([
+    './app/img/**/*'
+  ])
+  .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('clean-template-files', function () {
@@ -109,6 +116,7 @@ gulp.task('vendor-fonts', function () {
 gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['css'] );
     gulp.watch( './app/*.php', ['template-files'] );
+    gulp.watch( './app/img/**/*', ['template-files'] );
     gulp.watch( './app/inc/template-partials/*.php', ['template-files'] );
     gulp.watch( './app/woocommerce/**/*', ['template-files'] );
     gulp.watch( './app/js/**/*.js', ['js'] );
