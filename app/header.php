@@ -30,4 +30,8 @@
 
     <!-- Begin main page content -->
     <main class="page-content">
-      <div class="container">
+      <?php if( is_woocommerce() || ! is_single() ) { ?>
+        <div class="container">
+      <?php } else { ?>
+        <div class="container-fluid">
+      <?php } ?>
