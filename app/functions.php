@@ -26,6 +26,8 @@ add_action( 'wp_enqueue_scripts', 'include_flyrbord_scripts' );
  add_theme_support( 'wc-product-gallery-lightbox' );
  add_theme_support( 'wc-product-gallery-slider' );
 
+add_image_size( 'post-listing', 900, 506, true );
+
 /**
  * Add Qoo Commerce support
  */

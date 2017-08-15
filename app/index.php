@@ -32,13 +32,19 @@
           <?php
           // If post has thumbnail, display image
           if ( has_post_thumbnail() ) { ?>
-            <a href="<?php the_permalink(); ?>">
-              <?php the_post_thumbnail('large'); ?>
-            </a>
+            <div class="featured-image">
+              <a href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail('post-listing'); ?>
+              </a>
+            </div>
           <?php } ?>
-          <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-          <p><?php the_excerpt(); ?></p>
-          <a href="<?php the_permalink(); ?>">Read more</a>
+          <div class="text-content">
+            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <h4>Posted <?php echo get_the_date(); ?> by <?php echo get_the_author(); ?></h4>
+            <p><?php the_excerpt(); ?></p>
+            <h4>Archive: <?php the_category( ', ' ); ?></h4>
+            <a href="<?php the_permalink(); ?>">Read more</a>
+          </div>
         </div>
         <?php
       }
