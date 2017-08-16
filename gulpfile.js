@@ -115,7 +115,7 @@ gulp.task('vendor-fonts', function () {
 // Default tasks //
 gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['css'] );
-    gulp.watch( './app/*.php', ['template-files'] );
+    gulp.watch( './app/**/*.php', ['template-files'] );
     gulp.watch( './app/img/**/*', ['template-files'] );
     gulp.watch( './app/inc/template-partials/*.php', ['template-files'] );
     gulp.watch( './app/woocommerce/**/*', ['template-files'] );

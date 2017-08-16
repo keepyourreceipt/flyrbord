@@ -13,27 +13,8 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <?php
-      if( get_option('elementor_scheme_typography') ) {
-          $global_fonts = get_option('elementor_scheme_typography');
-
-          // Check for and assign primary headline font family and weight
-          if ( $global_fonts[1] ) {
-            $primary_headline = $global_fonts[1];
-            $primary_headline_font_family = $primary_headline['font_family'];
-            $primary_headline_font_weight = $primary_headline['font_weight'];
-          }
-      }
-      ?>
-
-      <?php if ( $primary_headline ) { ?>
-        <style>
-          h1, h2, h3, h4 {
-            font-family: <?php echo $primary_headline_font_family; ?>;
-          }
-        </style>
-      <?php } ?>
-
+    <?php get_template_part('inc/elementor/global', 'font-support'); ?>
+    <?php get_template_part('inc/elementor/global', 'color-support'); ?>
 
     <div class="pre-loader" style="display: block; position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; background: #fff; z-index: 999;"></div>
     <?php
