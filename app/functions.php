@@ -28,6 +28,19 @@ add_action( 'wp_enqueue_scripts', 'include_flyrbord_scripts' );
 
 add_image_size( 'post-listing', 900, 506, true );
 
+
+
+function start_small_column_wrap() {
+  echo "<div class='col-sm-10 col-sm-offset-1'>";
+}
+add_action( 'woocommerce_before_cart', 'start_small_column_wrap' );
+
+
+function end_small_column_wrap() {
+  echo "</div>";
+}
+add_action( 'woocommerce_after_cart', 'end_small_column_wrap' );
+
 /**
  * Add Qoo Commerce support
  */
