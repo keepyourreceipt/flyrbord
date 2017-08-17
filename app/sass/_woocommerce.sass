@@ -1,9 +1,37 @@
+.woocommerce-checkout
+  .page-content
+    background: linear-gradient(90deg, #fff 50%, #efefef 50%)
+
+    .woocommerce
+      margin-top: 0
+
+      .woocommerce-checkout-form-column.col-sm-6
+        &:first-child
+          padding-right: 5vw
+
+        &:last-child
+          padding-left: 5vw
+
+      .col2-set .col-1,
+      .col2-set .col-2
+        float: none
+        width: auto
+
+
 .page-content
   .woocommerce
     margin-top: 2vw
     margin-bottom: 10vw
 
 .woocommerce
+
+  .woocommerce-tabs.wc-tabs-wrapper
+    margin-bottom: 60px
+
+  table.variations
+    border-collapse: separate
+    border-spacing: 0px 10px
+
   div.product
     form.cart
       .variations
@@ -30,6 +58,9 @@
 
   ul.products
     li.product
+      padding: 8px
+      background: #f7f7f7
+
       .onsale
         border-radius: 0
         top: 0
@@ -49,24 +80,3 @@
 .woocommerce-checkout
   .page-content
     padding-bottom: 10vw
-
-@media (min-width: 993px)
-  body .woocommerce .col2-set .col-1
-    width: 100%
-
-  .woocommerce .col2-set,
-  .woocommerce-page .col2-set
-    width: 48%
-    float: left
-
-  #order_review_heading,
-  .woocommerce #order_review,
-  .woocommerce-page #order_review
-    float: left
-    width: 48%
-    margin-left: 2%
-
-.woocommerce .col2-set .col-2,
-.woocommerce-page .col2-set .col-2
-  float: none
-  width: 100%
