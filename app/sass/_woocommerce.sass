@@ -1,9 +1,21 @@
 .woocommerce-checkout
   .page-content
-    background: linear-gradient(90deg, #fff 50%, #efefef 50%)
+    background: linear-gradient(90deg, #fff 50%, #F2F3F8 50%)
 
     .woocommerce
       margin-top: 0
+
+      .woocommerce-checkout-review-order
+        .woocommerce-checkout-review-order-table
+          background: #fefefe
+
+          td:first-child
+            width: 60%
+
+      #add_payment_method #payment,
+      .woocommerce-cart #payment,
+      .woocommerce-checkout #payment
+        background: #fefefe
 
       .woocommerce-checkout-form-column.col-sm-6
         &:first-child
@@ -24,7 +36,6 @@
     margin-bottom: 10vw
 
 .woocommerce
-
   .woocommerce-tabs.wc-tabs-wrapper
     margin-bottom: 60px
 
@@ -55,11 +66,10 @@
     top: 0
     left: 0
 
-
   ul.products
     li.product
-      padding: 8px
-      background: #f7f7f7
+      img
+        border: solid 1px #aaa
 
       .onsale
         border-radius: 0
@@ -79,4 +89,5 @@
 
 .woocommerce-checkout
   .page-content
-    padding-bottom: 10vw
+    padding-top: 3vw
+    padding-bottom: 2vw
