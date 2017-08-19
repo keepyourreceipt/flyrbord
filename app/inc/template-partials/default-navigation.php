@@ -25,12 +25,19 @@
               'menu_class'=> 'menu'
             )); ?>
         </div>
-        <div class="col-xs-2 text-right navigation-search">
-          <span class="hidden-xs hidden-sm">Search&nbsp;&nbsp;</span><i class="fa fa-search" aria-hidden="true"></i>
+        <div class="col-xs-2 text-right navigation-tools">
+          <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="navigation-login">
+            <span class="hidden-xs hidden-sm">Login</span>
+          </a>
+          <a href="<?php echo wc_get_cart_url(); ?>" class="navigation-cart">
+            <?php $cart_count = WC()->cart->get_cart_contents_count(); ?>
+            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i><?php if ( $cart_count > 0 ) { echo "(" . $cart_count . ")"; } ?></span>
+          </a>
         </div>
       </div>
     </div>
   </div> <!-- End desktop menu -->
+
 
   <div class="row mobile-menu-container">
     <div class="container">
