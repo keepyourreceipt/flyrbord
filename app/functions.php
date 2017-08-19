@@ -262,6 +262,9 @@ if(class_exists('Kirki')) {
   ) );
 }
 
+// Include better comments file
+require_once( get_template_directory() .'/inc/template-partials/better-comments.php' );
+
 // Remove static front page option from customizer
 add_action('customize_register', 'themename_customize_register');
 function themename_customize_register($wp_customize) {
