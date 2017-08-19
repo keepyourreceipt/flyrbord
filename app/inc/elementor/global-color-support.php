@@ -35,10 +35,10 @@ if ( get_option('elementor_scheme_color') ) {
 .woocommerce-page input.button.alt:hover {
   background:<?php echo $accent_color; ?> !important;
   background-color:<?php echo $accent_color; ?> !important;
-  color:white !important;
+  color: white !important;
   text-shadow: transparent !important;
   box-shadow: none;
-  border-color:#ca0606 !important;
+  border-color: #ca0606 !important;
 }
 
 .woocommerce #content input.button:hover,
@@ -53,10 +53,10 @@ if ( get_option('elementor_scheme_color') ) {
 .woocommerce-page input.button:hover {
   background:<?php echo $accent_color; ?> !important;
   background-color:<?php echo $accent_color; ?> !important;
-  color:white !important;
+  color: white !important;
   text-shadow: transparent !important;
   box-shadow: none;
-  border-color:#ca0606 !important;
+  border-color: #ca0606 !important;
 }
 
 .woocommerce #content input.button,
@@ -69,9 +69,9 @@ if ( get_option('elementor_scheme_color') ) {
 .woocommerce-page button.button,
 .woocommerce-page input.button {
   background: <?php echo $accent_color; ?> !important;
-  color:white !important;
+  color: white !important;
   text-shadow: transparent !important;
-  border-color:#ca0606 !important;
+  border-color: #ca0606 !important;
 }
 
 .woocommerce #content input.button.alt:hover,
@@ -87,17 +87,56 @@ if ( get_option('elementor_scheme_color') ) {
   background: <?php echo $accent_color; ?> !important;
   box-shadow: none;
   text-shadow: transparent !important;
-  color:white !important;
-  border-color:#ca0606 !important;
+  color: white !important;
+  border-color: #ca0606 !important;
 }
 
 .woocommerce span.onsale {
   background-color: <?php echo $accent_color; ?>;
 }
 
+.woocommerce-info {
+  border-top-color: <?php echo $accent_color; ?>;
+}
+
 .woocommerce div.product p.price,
-.woocommerce div.product span.price {
+.woocommerce div.product span.price,
+.woocommerce-info::before,
+body a {
   color: <?php echo $accent_color; ?>;
+}
+
+body a:hover {
+  color: <?php echo $text_color; ?>;
+}
+
+p,
+span,
+strong,
+em,
+ul,
+li {
+  color: <?php echo $text_color; ?>;
+}
+
+h1,
+h2,
+h1 a,
+h2 a {
+  color: <?php echo $primary_color; ?>;
+  text-decoration: none;
+}
+
+h3,
+h4,
+h5,
+h6,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: <?php echo $secondary_color; ?>;
+  text-decoration: none;
 }
 
 </style>
