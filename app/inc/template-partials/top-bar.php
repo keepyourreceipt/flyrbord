@@ -12,10 +12,10 @@
         <?php if ( get_theme_mod( 'phone_number', '' ) || get_theme_mod( 'public_email', '' ) ) { ?>
           <div class="col-xs-12 col-sm-4 contact-info hidden-xs hidden-sm">
             <?php if ( get_theme_mod( 'phone_number', '' ) ) { ?>
-              <span class="phone-number"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo get_theme_mod( 'phone_number', '' ); ?></span>
+              <span class="phone-number">Phone: <?php echo get_theme_mod( 'phone_number', '' ); ?></span>
             <?php } ?>
             <?php if ( get_theme_mod( 'public_email', '' ) ) { ?>
-              <span class="public-email"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo get_theme_mod( 'public_email', '' ); ?></span>
+              <span class="public-email">Email: <?php echo get_theme_mod( 'public_email', '' ); ?></span>
             <?php } ?>
           </div>
         <?php } ?>

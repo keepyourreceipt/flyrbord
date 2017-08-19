@@ -111,7 +111,6 @@ body a:hover {
 }
 
 p,
-span,
 strong,
 em,
 ul,

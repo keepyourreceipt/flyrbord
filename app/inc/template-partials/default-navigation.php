@@ -26,9 +26,15 @@
             )); ?>
         </div>
         <div class="col-xs-2 text-right navigation-tools">
-          <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="navigation-login">
-            <span class="hidden-xs hidden-sm">Login</span>
-          </a>
+          <?php if ( is_user_logged_in() ) { ?>
+            <a href="<?php echo wp_logout_url( home_url() ); ?>">
+              <span class="hidden-xs hidden-sm">Logout</span>
+            </a>
+          <?php } else { ?>
+            <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="navigation-login">
+              <span class="hidden-xs hidden-sm">Login</span>
+            </a>
+          <?php } ?>
           <a href="<?php echo wc_get_cart_url(); ?>" class="navigation-cart">
             <?php $cart_count = WC()->cart->get_cart_contents_count(); ?>
             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i><?php if ( $cart_count > 0 ) { echo "(" . $cart_count . ")"; } ?></span>
