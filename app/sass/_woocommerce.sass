@@ -17,12 +17,21 @@
       .woocommerce-checkout #payment
         background: #fefefe
 
-      .woocommerce-checkout-form-column.col-sm-6
-        &:first-child
-          padding-right: 5vw
+      .woocommerce-checkout-form-column
+        .woocommerce-form__label-for-checkbox
+          input
+            top: 7px
+            left: -3px
 
-        &:last-child
-          padding-left: 5vw
+          span
+            margin-left: 20px
+
+        &.col-sm-6
+          &:first-child
+            padding-right: 5vw
+
+          &:last-child
+            padding-left: 5vw
 
       .col2-set .col-1,
       .col2-set .col-2
@@ -42,6 +51,9 @@
   table.variations
     border-collapse: separate
     border-spacing: 0px 10px
+
+    label
+      display: inline-block
 
   div.product
     form.cart
