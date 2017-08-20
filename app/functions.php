@@ -62,7 +62,7 @@ add_action( 'woocommerce_before_customer_login_form', 'start_login_form_wrap' );
 add_action( 'woocommerce_after_customer_login_form', 'output_closing_div_tag' );
 
 function start_small_column_wrap() {
-  echo "<div class='col-sm-10 col-sm-offset-1'>";
+  echo "<div class='col-sm-12'>";
 }
 add_action( 'woocommerce_before_cart', 'start_small_column_wrap' );
 

@@ -37,7 +37,7 @@
           <?php } ?>
           <a href="<?php echo wc_get_cart_url(); ?>" class="navigation-cart">
             <?php $cart_count = WC()->cart->get_cart_contents_count(); ?>
-            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i><?php if ( $cart_count > 0 ) { echo "(" . $cart_count . ")"; } ?></span>
+            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hidden-xs hidden-sm"><?php if ( $cart_count > 0 ) { echo "(" . $cart_count . ")"; } ?><span></span>
           </a>
         </div>
       </div>
