@@ -27,12 +27,12 @@
         </div>
         <div class="col-xs-2 text-right navigation-tools">
           <?php if ( is_user_logged_in() ) { ?>
-            <a href="<?php echo wp_logout_url( home_url() ); ?>">
-              <span class="hidden-xs hidden-sm">Logout</span>
+            <a class="hidden-xs hidden-sm" href="<?php echo wp_logout_url( home_url() ); ?>">
+              <span>Logout</span>
             </a>
           <?php } else { ?>
-            <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="navigation-login">
-              <span class="hidden-xs hidden-sm">Login</span>
+            <a class="hidden-xs hidden-sm" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="navigation-login">
+              <span>Login</span>
             </a>
           <?php } ?>
           <a href="<?php echo wc_get_cart_url(); ?>" class="navigation-cart">

@@ -91,17 +91,26 @@ if ( get_option('elementor_scheme_color') ) {
   border-color: #ca0606 !important;
 }
 
+.ninja-forms-field[type="button"] {
+  color: #fff;
+  background-color: <?php echo $accent_color; ?>;
+  border: none;
+}
+
 .woocommerce span.onsale {
   background-color: <?php echo $accent_color; ?>;
 }
 
-.woocommerce-info {
+.woocommerce-info,
+.woocommerce-message {
   border-top-color: <?php echo $accent_color; ?>;
 }
 
 .woocommerce div.product p.price,
 .woocommerce div.product span.price,
 .woocommerce-info::before,
+.woocommerce-Price-amount.amount,
+.woocommerce-message::before,
 body a {
   color: <?php echo $accent_color; ?>;
 }
@@ -114,7 +123,9 @@ p,
 strong,
 em,
 ul,
-li {
+li,
+div.nf-field-label label,
+form label {
   color: <?php echo $text_color; ?>;
 }
 
