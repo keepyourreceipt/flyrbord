@@ -4,21 +4,31 @@ input,
 form input,
 textarea,
 form textarea
-  padding-left: 15px
-  padding-right: 15px
-  line-height: 2.125em
+  padding-left: 10px
+  padding-right: 10px
+  line-height: 3em
   box-shadow: none
   border-radius: 4px
   border: solid 1px #aaa
   outline: none
   width: 100%
 
+form textarea
+  padding-top: 10px
+
 input[type="submit"]
   width: auto
 
-select
+input[type="radio"]
+  width: auto
+
+  + label
+    display: inline-block
+    width: auto
+
+select,
+select.ninja-forms-field
   background-color: #fff
-  height: 34px
   width: 100%
 
 label
@@ -27,3 +37,11 @@ label
 // Widgets
 #submit-search-form
   cursor: pointer
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__rendered,
+.select2-container--default .select2-selection--single .select2-selection__arrow
+  height: 3em
+
+.select2-container--default .select2-selection--single .select2-selection__rendered
+  line-height: 3em
