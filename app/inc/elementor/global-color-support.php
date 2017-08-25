@@ -126,7 +126,8 @@ ul,
 li,
 div.nf-field-label label,
 form label,
-.select2-container--default .select2-selection--single .select2-selection__rendered {
+.select2-container--default .select2-selection--single .select2-selection__rendered,
+.nf-field-element select {
   color: <?php echo $text_color; ?>;
 }
 
