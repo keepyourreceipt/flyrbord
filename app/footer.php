@@ -48,5 +48,11 @@
     Copyright <?php echo date( "Y" ); ?><?php echo get_bloginfo("name"); ?>
   </footer>
   <?php wp_footer(); ?>
+  <?php
+    // Include google analytics if set in customizer
+    if( get_theme_mod( 'google_analytics' ) ) {
+      echo get_theme_mod( 'google_analytics', '' );
+    }
+  ?>
   </body>
 </html>

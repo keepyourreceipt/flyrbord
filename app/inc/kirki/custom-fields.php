@@ -15,15 +15,6 @@ if(class_exists('Kirki')) {
   ) );
 
   Kirki::add_field( 'flyrbord', array(
-    'type'        => 'toggle',
-  	'settings'    => 'show_top_bar',
-  	'label'       => __( 'Show bar above main menu', 'flyrbord' ),
-  	'section'     => 'top_bar',
-  	'default'     => '1',
-  	'priority'    => 10,
-  ) );
-
-  Kirki::add_field( 'flyrbord', array(
   	'type'     => 'text',
   	'settings' => 'announcement_text',
   	'label'    => __( 'Special Announcement', 'flyrbord' ),
@@ -112,5 +103,28 @@ if(class_exists('Kirki')) {
     'section'  => 'contact_info',
     'default'  => esc_attr__( '', 'flyrbord' ),
     'priority' => 10,
+  ) );
+
+  Kirki::add_section( 'analytics', array(
+      'title'          => __( 'Analytics & Tracking' ),
+      'description'    => __( 'Add tracking scripts to understand your users' ),
+      'panel'          => '', // Not typically needed.
+      'priority'       => 20,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'code',
+    'settings' => 'google_analytics',
+    'label'    => __( 'Google Analytics Tracking Code', 'flyrbord' ),
+    'section'  => 'analytics',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10,
+    'choices'     => array(
+  		'language' => 'js',
+  		'theme'    => 'monokai',
+  		'height'   => 250,
+	),
   ) );
 }
