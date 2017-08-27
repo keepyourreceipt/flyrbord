@@ -101,3 +101,9 @@ function mycustomfunc_remove_css_section( $wp_customize ) {
 	$wp_customize->remove_section( 'custom_css' );
 }
 add_action( 'customize_register', 'mycustomfunc_remove_css_section', 15 );
+
+add_filter( 'woocommerce_no_shipping_available_html', 'my_custom_no_shipping_message' );
+add_filter( 'woocommerce_cart_no_shipping_available_html', 'my_custom_no_shipping_message' );
+function my_custom_no_shipping_message( $message ) {
+	return __( 'Local delivery is available to addresses in NH and MA. <a href="/delivery-area">More info</a>' );
+}
