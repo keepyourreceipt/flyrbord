@@ -27,6 +27,18 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
+// If shop sidebar has widgets, update the number of products
+// displayed per row to 3
+if ( is_active_sidebar( 'shop_sidebar' ) ) {
+  // Change number or products per row to 3
+  add_filter('loop_shop_columns', 'loop_columns');
+  if (!function_exists('loop_columns')) {
+    function loop_columns() {
+      return 3; // 3 products per row
+    }
+  }
+}
+
 // Add custom image sizes
 add_image_size( 'post-listing', 900, 506, true );
 add_image_size( 'menu-logo', 120, 120, false );
@@ -61,6 +73,15 @@ function flyrbord_widgets_init() {
     'name'          => 'Blog Sidebar',
     'id'            => 'blog_sidebar',
     'before_widget' => '<div class="col-sm-12 blog-widget">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+  ) );
+
+  register_sidebar( array(
+    'name'          => 'Shop Sidebar',
+    'id'            => 'shop_sidebar',
+    'before_widget' => '<div class="col-sm-12 shop-widget">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2>',
     'after_title'   => '</h2>',

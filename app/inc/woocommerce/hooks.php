@@ -1,5 +1,12 @@
 <?php
 
+
+function wrap_shop_page_product_list() {
+  echo "<div class='col-sm-12 shop-page-products-list'>";
+}
+add_action( 'woocommerce_before_shop_loop', 'wrap_shop_page_product_list' );
+add_action( 'woocommerce_after_shop_loop', 'output_closing_div_tag' );
+
 // Clear checkout floats
 function clearfix() {
   echo "<div style='clear: both;'></div>";
@@ -60,11 +67,3 @@ add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 
        remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
      }
    }
-
-// Change number or products per row to 3
-add_filter('loop_shop_columns', 'loop_columns');
-if (!function_exists('loop_columns')) {
-	function loop_columns() {
-		return 4; // 3 products per row
-	}
-}
