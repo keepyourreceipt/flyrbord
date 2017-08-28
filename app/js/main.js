@@ -1,17 +1,28 @@
 jQuery( document ).ready(function( $ ) {
 
-  // Setup theme functions (see function definitions below)
   init();
 
-  // Toggle mobile menu on click
-  $('.mobile-menu-toggle').click(function() {
-    $('.mobile-menu').slideToggle();
-  });
+  function init() {
+    // Setup theme scripts
+    hidePreloader();
+    desktopNavigationDropdown();
+    toggleMobileMenu();
+    toggleMobileSubMenu();
+    addCustomWCSortingClass();
+  }
 
-  function toggleDesktopNavigation() {
-    // On mouse leave, remove the active sub-menu class to
-    // close the active sub-menu
-    $('ul.menu > li').not('.mobile-menu').mouseleave( function() {
+  function hidePreloader() {
+    // Hide pre-loader when page is loaded
+    var $preloader = $('.pre-loader');
+    if ( $preloader.length ) {
+        $preloader.fadeOut(400);
+    }
+  }
+
+  function desktopNavigationDropdown() {
+    // On mouse leave, remove the active sub-menu class to close the active sub-menu
+    var $activeMenuItem = $('ul.menu > li').not('.mobile-menu');
+    $activeMenuItem.mouseleave( function() {
       $( this ).find('.sub-menu').removeClass('active');
     });
 
@@ -27,16 +38,33 @@ jQuery( document ).ready(function( $ ) {
     });
   }
 
-  $('ul.mobile-menu > li.menu-item-has-children').not('a').click(function() {
-    $(this).find('.sub-menu').slideToggle();
-  });
+  function toggleMobileMenu() {
+    // Toggle mobile menu on click
+    var $toggle = $('.mobile-menu-toggle');
+    var $menu = $('.mobile-menu');
+    if ( $toggle.length && $menu.length ) {
+      $toggle.click(function() {
+        $menu.slideToggle();
+      });
+    }
+  }
 
-  function init() {
-    // Hide pre-loader when page is loaded
-    $('.pre-loader').fadeOut(400);
+  function toggleMobileSubMenu() {
+    // Toggle navigation sub-menus in mobile
+    var $toggleElement = $('ul.mobile-menu > li.menu-item-has-children').not('a');
+    if ( $toggleElement.length ) {
+      $toggleElement.click(function() {
+        $(this).find('.sub-menu').slideToggle();
+      });
+    }
+  }
 
-    // Setup menu functionality
-    toggleDesktopNavigation();
+  function addCustomWCSortingClass() {
+    // Add custom classes to woocommerce product sorting dropdown
+    var $element = $('.woocommerce-page select.orderby');
+    if ( $element.length ) {
+      $element.addClass('form-control');
+    }
   }
 
 });
