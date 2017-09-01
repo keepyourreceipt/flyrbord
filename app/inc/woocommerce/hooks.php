@@ -1,5 +1,14 @@
 <?php
 
+// Change "shipping" to "delivery" in woo commerce checkout
+add_filter('gettext', 'translate_reply');
+add_filter('ngettext', 'translate_reply');
+
+function translate_reply($translated) {
+  $translated = str_ireplace('Shipping', 'Delivery', $translated);
+  return $translated;
+}
+
 // Clear checkout floats
 function clearfix() {
   echo "<div style='clear: both;'></div>";
