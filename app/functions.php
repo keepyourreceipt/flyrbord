@@ -72,7 +72,7 @@ function flyrbord_widgets_init() {
   register_sidebar( array(
     'name'          => 'Shop Sidebar',
     'id'            => 'shop_sidebar',
-    'before_widget' => '<div class="col-sm-12 shop-widget">',
+    'before_widget' => '<div class="col-sm-4 shop-widget">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2>',
     'after_title'   => '</h2>',

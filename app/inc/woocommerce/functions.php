@@ -29,10 +29,20 @@ function remove_add_to_cart_buttons() {
   }
 }
 
+add_filter( 'woocommerce_show_page_title' , 'hide_page_title' );
+function hide_page_title() {
+	return false;
+}
+
 
 /***********************************************************
 * Custom markup and section wrappers
 ************************************************************/
+
+// Wrap checkout columns in containing divs
+function wrap_woocommerce_checkout_form() {
+  echo "<div class='woocommerce-checkout-form-column col-sm-6'>";
+}
 
 // Wrap woocommerce checout form in containing div
 function start_checkout_form_wrap() {
@@ -61,6 +71,10 @@ function col_sm_12() {
 
 function col_sm_8() {
   echo "<div class='col-sm-8'>";
+}
+
+function col_sm_8_has_sidebar() {
+  echo "<div class='col-sm-8 has-sidebar'>";
 }
 
 function col_sm_6() {
