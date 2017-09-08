@@ -5,6 +5,11 @@ if(class_exists('Kirki')) {
   	'option_type'   => 'theme_mod',
   ) );
 
+
+  /***********************************************************
+  * Top bar
+  ************************************************************/
+
   Kirki::add_section( 'top_bar', array(
       'title'          => __( 'Top Bar' ),
       'description'    => __( 'Manage content displayed above the main menu' ),
@@ -23,6 +28,10 @@ if(class_exists('Kirki')) {
   	'priority' => 10,
   ) );
 
+
+  /***********************************************************
+  * Social media account links
+  ************************************************************/
 
   Kirki::add_section( 'social_media', array(
       'title'          => __( 'Social Media' ),
@@ -78,6 +87,11 @@ if(class_exists('Kirki')) {
     'priority' => 10,
   ) );
 
+
+  /***********************************************************
+  * Contact info
+  ************************************************************/
+
   Kirki::add_section( 'contact_info', array(
       'title'          => __( 'Contact Info' ),
       'description'    => __( 'Add / edit company contact info' ),
@@ -105,11 +119,16 @@ if(class_exists('Kirki')) {
     'priority' => 10,
   ) );
 
+
+  /***********************************************************
+  * Google analytics
+  ************************************************************/
+
   Kirki::add_section( 'analytics', array(
       'title'          => __( 'Analytics & Tracking' ),
       'description'    => __( 'Add tracking scripts to understand your users' ),
       'panel'          => '', // Not typically needed.
-      'priority'       => 20,
+      'priority'       => 260,
       'capability'     => 'edit_theme_options',
       'theme_supports' => '', // Rarely needed.
   ) );
@@ -126,5 +145,36 @@ if(class_exists('Kirki')) {
   		'theme'    => 'monokai',
   		'height'   => 250,
 	),
+  ) );
+
+
+  /***********************************************************
+  * 404 Page
+  ************************************************************/
+  Kirki::add_section( 'four_oh_four', array(
+      'title'          => __( '404 Page' ),
+      'description'    => __( 'Manage 404 page content' ),
+      'panel'          => '', // Not typically needed.
+      'priority'       => 280,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'text',
+    'settings' => 'four_oh_four_heading',
+    'label'    => __( 'Text Heading', 'flyrbord' ),
+    'section'  => 'four_oh_four',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'textarea',
+    'settings' => 'four_oh_four_message',
+    'label'    => __( 'Text Message', 'flyrbord' ),
+    'section'  => 'four_oh_four',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10
   ) );
 }
