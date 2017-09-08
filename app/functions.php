@@ -27,18 +27,6 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
-// If shop sidebar has widgets, update the number of products
-// displayed per row to 3
-if ( is_active_sidebar( 'shop_sidebar' ) ) {
-  // Change number or products per row to 3
-  add_filter('loop_shop_columns', 'loop_columns');
-  if (!function_exists('loop_columns')) {
-    function loop_columns() {
-      return 3; // 3 products per row
-    }
-  }
-}
-
 // Add custom image sizes
 add_image_size( 'post-listing', 900, 506, true );
 add_image_size( 'menu-logo', 120, 120, false );
@@ -53,6 +41,9 @@ require_once( get_template_directory() . '/inc/kirki/custom-fields.php' );
 
 // Include better comments file
 require_once( get_template_directory() .'/inc/template-partials/post-comments.php' );
+
+// Include woo commerce functions
+require_once( get_template_directory() . '/inc/woocommerce/functions.php' );
 
 // Include woo commerce hooks
 require_once( get_template_directory() . '/inc/woocommerce/hooks.php' );
@@ -81,7 +72,7 @@ function flyrbord_widgets_init() {
   register_sidebar( array(
     'name'          => 'Shop Sidebar',
     'id'            => 'shop_sidebar',
-    'before_widget' => '<div class="col-sm-12 shop-widget">',
+    'before_widget' => '<div class="col-sm-4 shop-widget">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2>',
     'after_title'   => '</h2>',
@@ -105,5 +96,5 @@ add_action( 'customize_register', 'mycustomfunc_remove_css_section', 15 );
 add_filter( 'woocommerce_no_shipping_available_html', 'my_custom_no_shipping_message' );
 add_filter( 'woocommerce_cart_no_shipping_available_html', 'my_custom_no_shipping_message' );
 function my_custom_no_shipping_message( $message ) {
-	return __( '<span>Local delivery is available to addresses in NH and MA. <a href="/delivery-area">More info</a></span>' );
+	return __( 'Local delivery is available to addresses in NH and MA. <a href="/delivery-area">More info</a>' );
 }
