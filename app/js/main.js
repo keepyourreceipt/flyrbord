@@ -41,10 +41,17 @@ jQuery( document ).ready(function( $ ) {
   function toggleMobileMenu() {
     // Toggle mobile menu on click
     var $toggle = $('.mobile-menu-toggle');
+    var $toggleIcon = $toggle.children('i');
     var $menu = $('.mobile-menu');
     if ( $toggle.length && $menu.length ) {
       $toggle.click(function() {
         $menu.slideToggle();
+        // Toggle icon with menu interaction
+        if ( $toggleIcon.hasClass('fa-align-left') ) {
+          $toggleIcon.attr('class', '').addClass('fa fa-times');
+        } else {
+          $toggleIcon.attr('class', '').addClass('fa fa-align-left');
+        }
       });
     }
   }
