@@ -2,6 +2,9 @@
 // Include Kirki for customizer options and global content
 require_once get_template_directory() . '/inc/kirki/include-kirki.php';
 
+// Include custom menu walker class
+require_once get_template_directory() . '/inc/template-partials/desktop-walker-class.php';
+
 // Enqueue a script with jQuery as a dependency.
 function include_flyrbord_scripts() {
     // Theme scripts

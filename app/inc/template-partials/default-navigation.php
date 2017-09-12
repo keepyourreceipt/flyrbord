@@ -22,7 +22,8 @@
               'theme_location' => 'main_navigation_menu',
               'fallback_cb' => 'default_header_nav',
               'container' => '',
-              'menu_class'=> 'menu'
+              'menu_class'=> 'menu',
+              'walker' => new Flyrbord_Desktop_Nav_Walker()
             )); ?>
         </div>
         <div class="col-xs-2 text-right navigation-tools">
