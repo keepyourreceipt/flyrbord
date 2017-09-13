@@ -22,18 +22,14 @@ function sv_remove_product_page_skus( $enabled ) {
     return $enabled;
 }
 
-// Remove add to cart buttons on the product page(s)
-function remove_add_to_cart_buttons() {
-  if( is_product_category() || is_shop()) {
-    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
-  }
-}
+// Remove SKU number from product page(s)
+add_filter( 'wc_product_sku_enabled', 'sv_remove_product_page_skus' );
 
+// Remove page title from shop pages
 add_filter( 'woocommerce_show_page_title' , 'hide_page_title' );
 function hide_page_title() {
 	return false;
 }
-
 
 /***********************************************************
 * Custom markup and section wrappers

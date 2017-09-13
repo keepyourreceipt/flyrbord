@@ -106,10 +106,7 @@ if ( get_option('elementor_scheme_color') ) {
   border-top-color: <?php echo $accent_color; ?>;
 }
 
-.woocommerce div.product p.price,
-.woocommerce div.product span.price,
 .woocommerce-info::before,
-.woocommerce-Price-amount.amount,
 .woocommerce-message::before,
 body a {
   color: <?php echo $accent_color; ?>;

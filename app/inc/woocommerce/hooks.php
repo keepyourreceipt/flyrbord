@@ -39,9 +39,3 @@ add_action( 'woocommerce_after_customer_login_form', 'closing_div' );
 // Wrap cart
 add_action( 'woocommerce_before_cart', 'col_sm_12' );
 add_action( 'woocommerce_after_cart', 'closing_div' );
-
-// Remove SKU number from product page(s)
-add_filter( 'wc_product_sku_enabled', 'sv_remove_product_page_skus' );
-
-// Remove add to cart buttons on the shop page
-add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
