@@ -21,8 +21,6 @@
 
   ul.menu
     > li.menu-item
-      position: relative
-
       > ul.sub-menu
         position: absolute
         background: #455a64
@@ -31,9 +29,12 @@
         display: none
         min-width: 290px
         padding: 10px
-        top: calc(100% - 8px)
+        // top: calc(100% - 8px)
         left: 0px
         border-radius: 2px
+
+        &.row
+          width: 100%
 
         li
           display: block
