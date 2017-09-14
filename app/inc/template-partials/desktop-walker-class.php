@@ -44,13 +44,7 @@ class Flyrbord_Desktop_Nav_Walker extends Walker {
 			$n = "\n";
 		}
 		$indent = str_repeat( $t, $depth );
-
-		// Default class.
-		if ( $depth == 0 ) {
-			$classes = array( 'sub-menu row' );
-		} else {
-			$classes = array( 'sub-menu' );
-		}
+		$classes = array( 'sub-menu' );
 
 		/**
 		 * Filters the CSS class(es) applied to a menu list element.
@@ -119,12 +113,6 @@ class Flyrbord_Desktop_Nav_Walker extends Walker {
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
-
-		// var_dump( $item );
-
-		if( $depth == 1 ) {
-			array_push( $classes, 'col-sm-3' );
-		}
 
 		/**
 		 * Filters the arguments for a single nav menu item.

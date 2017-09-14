@@ -31,7 +31,7 @@ jQuery( document ).ready(function( $ ) {
         var timer = setTimeout(function() {
             var target = $( e.target );
             target.parent().find('.sub-menu').addClass('active');
-        },  250);
+        },  150);
         $(this).data('hoverTimer', timer);
     }).on('mouseleave', $('ul.menu > li'), function(e){
         clearTimeout($(this).data('hoverTimer'));
