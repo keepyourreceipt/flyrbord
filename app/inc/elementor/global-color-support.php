@@ -33,8 +33,8 @@ if ( get_option('elementor_scheme_color') ) {
 .woocommerce-page a.button.alt:hover,
 .woocommerce-page button.button.alt:hover,
 .woocommerce-page input.button.alt:hover {
-  background:<?php echo $accent_color; ?>;
-  background-color:<?php echo $accent_color; ?>;
+  background:<?php echo $accent_color; ?> !important;
+  background-color:<?php echo $accent_color; ?> !important;
   color: white !important;
   text-shadow: transparent !important;
   box-shadow: none;
@@ -51,8 +51,8 @@ if ( get_option('elementor_scheme_color') ) {
 .woocommerce-page a.button:hover,
 .woocommerce-page button.button:hover,
 .woocommerce-page input.button:hover {
-  background:<?php echo $accent_color; ?>;
-  background-color:<?php echo $accent_color; ?>;
+  background:<?php echo $accent_color; ?> !important;
+  background-color:<?php echo $accent_color; ?> !important;
   color: white !important;
   text-shadow: transparent !important;
   box-shadow: none;
@@ -68,7 +68,7 @@ if ( get_option('elementor_scheme_color') ) {
 .woocommerce-page a.button,
 .woocommerce-page button.button,
 .woocommerce-page input.button {
-  background: <?php echo $accent_color; ?>;
+  background: <?php echo $accent_color; ?> !important;
   color: white !important;
   text-shadow: transparent !important;
   border-color: #ca0606 !important;
@@ -84,7 +84,7 @@ if ( get_option('elementor_scheme_color') ) {
 .woocommerce-page a.button.alt:hover,
 .woocommerce-page button.button.alt:hover,
 .woocommerce-page input.button.alt:hover {
-  background: <?php echo $accent_color; ?>;
+  background: <?php echo $accent_color; ?> !important;
   box-shadow: none;
   text-shadow: transparent !important;
   color: white !important;
