@@ -10,6 +10,7 @@ jQuery( document ).ready(function( $ ) {
     toggleMobileSubMenu();
     addCustomWCSortingClass();
     addToCartButtonIcon();
+    addDesktopSubMenuClasses();
   }
 
   function hidePreloader() {
@@ -18,6 +19,27 @@ jQuery( document ).ready(function( $ ) {
     if ( $preloader.length ) {
         $preloader.fadeOut(400);
     }
+  }
+
+  function addDesktopSubMenuClasses() {
+    var $subMenuItems = $('.main-menu ul.menu > li.menu-item > ul.sub-menu li');
+    $subMenuItems.each(function() {
+      if ( $(this).hasClass('menu-item-has-children') ) {
+        var $numberOfSubMenuItems = $(this).siblings().length + 1;
+        var $subMenuContainerWidth;
+
+        // Sub-menu container should have a max of 4 columns
+        if ( $numberOfSubMenuItems <= 4 ) {
+          $subMenuContainerWidth = $(this).outerWidth() * $numberOfSubMenuItems;
+        } else if ( $numberOfSubMenuItems > 4 ) {
+          $subMenuContainerWidth = $(this).outerWidth() * 4;
+        }
+
+        // Add sub-menu classes and set sub-menu container width
+        $(this).parents('ul.sub-menu').addClass('sub-menu-items-have-children').css('min-width', ($subMenuContainerWidth + 35 /* padding */ ) + "px");
+
+      }
+    });
   }
 
   function addToCartButtonIcon() {

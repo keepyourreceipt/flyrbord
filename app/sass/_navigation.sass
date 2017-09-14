@@ -25,6 +25,8 @@
         transition: none
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19), 0 2px 7px rgba(0, 0, 0, 0.23)
         z-index: 9999
+        text-align: left
+        box-sizing: border-box
 
         &:before
           content: ""
@@ -39,6 +41,7 @@
 
         li
           display: block
+          vertical-align: top
 
           a
             line-height: 1.5em
@@ -61,6 +64,11 @@
           opacity: 1
           display: inline-block
           visibility: visible
+
+        &.sub-menu-items-have-children
+          li
+            display: inline-block
+            width: 200px
 
   .navigation-logo
 
