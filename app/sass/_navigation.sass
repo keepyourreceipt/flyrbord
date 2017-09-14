@@ -3,21 +3,11 @@
   position: relative
   z-index: 9
 
+  .menu-container
+    background: linear-gradient(0deg,#303c42 0%,#37424b 100%)
+
   .navigation-links
     position: inherit
-
-  .content
-    &:before
-      content: ""
-      height: 100%
-      width: 100%
-      // Menu background color
-      background: linear-gradient(0deg,#303c42 0%,#37424b 100%)
-      display: inline-block
-      position: absolute
-      top: 0px
-      left: 0px
-      z-index: -1
 
   ul.menu
     > li.menu-item
@@ -34,6 +24,7 @@
         transform: translate(-50%) scale(0.92)
         transition: none
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19), 0 2px 7px rgba(0, 0, 0, 0.23)
+        z-index: 9999
 
         &:before
           content: ""

@@ -9,6 +9,7 @@ jQuery( document ).ready(function( $ ) {
     toggleMobileMenu();
     toggleMobileSubMenu();
     addCustomWCSortingClass();
+    addToCartButtonIcon();
   }
 
   function hidePreloader() {
@@ -16,6 +17,16 @@ jQuery( document ).ready(function( $ ) {
     var $preloader = $('.pre-loader');
     if ( $preloader.length ) {
         $preloader.fadeOut(400);
+    }
+  }
+
+  function addToCartButtonIcon() {
+    // Add a crt button to the product archive buttons
+    if ( $('.products .product a.button').length ) {
+      var $buttons = $('.products .product a.button');
+      $buttons.each(function() {
+        $(this).prepend('<i class="fa fa-shopping-cart" aria-hidden="true"></i>');
+      });
     }
   }
 

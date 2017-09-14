@@ -22,6 +22,12 @@ function sv_remove_product_page_skus( $enabled ) {
     return $enabled;
 }
 
+// Add custom button label text on product archive page
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );    // 2.1 +
+function woo_archive_custom_cart_button_text() {
+    return __( 'Select Options', 'woocommerce' );
+}
+
 // Remove SKU number from product page(s)
 add_filter( 'wc_product_sku_enabled', 'sv_remove_product_page_skus' );
 

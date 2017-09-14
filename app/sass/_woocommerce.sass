@@ -80,15 +80,16 @@
   span.onsale
     border-radius: 0
     top: 0
+    z-index: 1
     left: 0
 
   ul.products
     li.product
-      border: solid 1px #ddd
-      border-radius: 2px
+      border: solid 1px #eee
+      border-radius: 4px
 
       img
-        border-bottom: solid 1px #ddd
+        border-bottom: solid 1px #eee
 
       .onsale
         border-radius: 0
@@ -105,9 +106,16 @@
         padding: 12px 0
         opacity: 0.5
         transition: opacity 0.3s ease
+        background-color: #bbb
+        font-size: 0.8em
+
+        i.fa
+          padding-right: 4px
+          font-size: 1.25em
 
         &:hover
           opacity: 1
+          // background-color: #ccc
 
       h2.woocommerce-loop-product__title,
       span.price
@@ -154,3 +162,6 @@ abbr.required
 .woocommerce div.product p.price,
 .woocommerce-Price-amount.amount,
   color: #555
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger
+  z-index: 1
