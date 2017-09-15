@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <div class="row">
   <?php
     $hase_sidebar = false;
@@ -10,28 +11,15 @@
     }
   ?>
   <div class="<?php echo $posts_collection_classes; ?> posts-collection">
-    <?php if( is_archive() ) { ?>
-      <h2 class="remove-top-margin"><?php the_archive_title(); ?></h2>
-    <?php } ?>
-
+    <h2 class="remove-top-margin">Seach Results: <?php echo get_search_query(); ?></h2>
     <?php
     if( have_posts() ) {
       while( have_posts() ) {
         the_post();
         ?>
         <div class="post">
-          <?php
-          // If post has thumbnail, display image
-          if ( has_post_thumbnail() ) { ?>
-            <div class="featured-image">
-              <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail('post-listing'); ?>
-              </a>
-            </div>
-          <?php } ?>
           <div class="text-content">
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            <h4>Posted <?php echo get_the_date(); ?> by <?php echo get_the_author(); ?></h4>
             <p><?php the_excerpt(); ?></p>
             <h4>Archive: <?php the_category( ', ' ); ?></h4>
             <a href="<?php the_permalink(); ?>">Read more</a>
@@ -39,8 +27,10 @@
         </div>
         <?php
       }
-    }
-  ?>
+    } else { ?>
+        <h4>No search reults found.</h4>
+        <p>Please try searching again. If you've landed here in error, please contact us.</p>
+    <?php } ?>
 
     <div class="row">
       <div class="col-sm-12">

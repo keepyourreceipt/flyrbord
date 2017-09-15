@@ -57,7 +57,8 @@ if( get_option('elementor_scheme_typography') ) {
       font-weight: <?php echo $body_text_font_weight; ?>;
     }
 
-    h1, h2, h3 {
+    h1, h2, h3,
+    h1 a, h2 a, h3 a {
       font-family: <?php echo $primary_headline_font_family; ?>;
       font-weight: <?php echo $primary_headline_font_weight; ?>;
     }

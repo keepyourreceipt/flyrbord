@@ -32,13 +32,13 @@ if ( get_option('elementor_scheme_color') ) {
 .woocommerce-page #respond input#submit.alt:hover,
 .woocommerce-page a.button.alt:hover,
 .woocommerce-page button.button.alt:hover,
-.woocommerce-page input.button.alt:hover {
+.woocommerce-page input.button.alt:hover,
+input[type="submit"] {
   background:<?php echo $accent_color; ?> !important;
   background-color:<?php echo $accent_color; ?> !important;
   color: white !important;
   text-shadow: transparent !important;
-  box-shadow: none;
-  border-color: #ca0606 !important;
+  box-shadow: none;  
 }
 
 .woocommerce #content input.button:hover,

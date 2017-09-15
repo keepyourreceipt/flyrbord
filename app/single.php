@@ -26,7 +26,7 @@
           <?php } ?>
 
           <div class="text-content">
-            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             <h4>Posted <?php echo get_the_date(); ?> by <?php echo get_the_author(); ?></h4>
             <h4>Archive: <?php the_category( ', ' ); ?></h4>
             <?php the_content(); ?>
