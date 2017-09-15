@@ -4,15 +4,19 @@
 * Customize Woocommerce output and options
 ************************************************************/
 
-// If has shop sidebar, set number of products per row to 3
-if ( is_active_sidebar( 'shop_sidebar' ) ) {
-  add_filter('loop_shop_columns', 'loop_columns');
-  if (!function_exists('loop_columns')) {
-    function loop_columns() {
-      return 3;
-    }
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+  function loop_columns() {
+    return 3;
   }
 }
+
+
+// Remove the sorting dropdown from Woocommerce
+remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_catalog_ordering', 30 );
+
+// Removes showing results
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
 // Remove woo commerce skus
 function sv_remove_product_page_skus( $enabled ) {

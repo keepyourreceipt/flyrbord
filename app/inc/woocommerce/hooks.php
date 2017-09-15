@@ -2,10 +2,13 @@
 
 // Setup shop page markup
 add_action( 'woocommerce_before_main_content', 'row' );
+// Wrap breadcrumb navigation
 add_action( 'woocommerce_before_main_content', 'col_sm_12');
+add_action( 'woocommerce_before_main_content', 'woocommerce_catalog_ordering');
+
+// Close row
 add_action( 'woocommerce_before_shop_loop', 'closing_div' );
-add_action( 'woocommerce_archive_description', 'closing_div' );
-add_action( 'woocommerce_before_shop_loop', 'row' );
+
 
 // If sidebar is active, wrap production in appropriate column width
 if ( is_active_sidebar( 'shop_sidebar' ) ) {

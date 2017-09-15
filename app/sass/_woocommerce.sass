@@ -45,6 +45,28 @@
     margin-bottom: 10vw
 
 .woocommerce
+
+  .woocommerce-ordering
+    @media screen and ( max-width: 768px )
+      width: 100%
+
+    select
+      cursor: pointer
+
+      &.orderby
+        background-image: url(../img/icon-three-dots.svg)
+        background-repeat: no-repeat
+        background-position: center right
+        background-size: 15px
+        -webkit-appearance: none
+        -webkit-border-radius: 1px
+        box-shadow: none
+
+  .woocommerce-breadcrumb
+    @media screen and ( min-width: 768px )
+      margin-bottom: 0
+      line-height: 2.5em
+
   .quantity
     & .qty
       line-height: 30px
@@ -113,13 +135,16 @@
           font-size: 1.25em
 
         &:hover
-          opacity: 1          
+          opacity: 1
 
       h2.woocommerce-loop-product__title,
       span.price
         padding-left: 10px
         padding-right: 10px
         color: #555
+
+        del
+          display: inline-block
 
       h2.woocommerce-loop-product__title
         font-size: 1.25em
@@ -152,10 +177,10 @@
 abbr.required
   cursor: default
 
-.woocommerce .has-sidebar ul.products li.product,
-.woocommerce-page .has-sidebar ul.products li.product
+.woocommerce:not(.single) ul.products li.product,
+.woocommerce-page:not(.single) ul.products li.product
   @media screen and ( min-width: 768px )
-    width: 30.75%
+    width: 30.8%
 
 .woocommerce div.product p.price,
 .woocommerce-Price-amount.amount,
