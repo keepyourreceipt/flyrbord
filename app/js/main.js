@@ -11,6 +11,44 @@ jQuery( document ).ready(function( $ ) {
     addCustomWCSortingClass();
     addToCartButtonIcon();
     addDesktopSubMenuClasses();
+    fancyNumField();
+  }
+
+  function fancyNumField() {
+    var $wcQuantityContainer = $('.product div.quantity');
+
+    // If Wooommerce quantity field exists on page
+    if ( $wcQuantityContainer.length ) {
+      $wcQuantityContainer.each(function() {
+
+        // Get reference to num field element and it's value
+        var $numField = $(this).find('input[type="number"]');
+        var $numFieldValue;
+
+        // $(this).prepend('<input type="tel" value="' + $realNumValue + '" class="fancyNumField number">');
+        $(this).prepend('<span class="fancyNumField downArrow"><i class="fa fa-minus" aria-hidden="true"></i></span>');
+
+        // Display number field value and incrementing arrows
+        $(this).append('<span class="fancyNumField upArrow"><i class="fa fa-plus" aria-hidden="true"></i></span>');
+
+        // Un click, update the value on the number field as needed
+        $(this).find('.fancyNumField.upArrow').click(function() {
+          $numFieldValue = parseInt($numField.val()) + 1;
+          $numField.val( $numFieldValue.toString() );
+        });
+
+        $(this).find('.fancyNumField.downArrow').click(function() {
+          $numFieldValue = parseInt($numField.val()) - 1;
+
+          // If num equal to or greater than 1, adjust the value
+          // this protects from zero or negative quantity values
+          if ( $numFieldValue > 0 ) {
+            $numField.val( $numFieldValue.toString() );
+          }
+        });
+
+      });
+    }
   }
 
   function hidePreloader() {

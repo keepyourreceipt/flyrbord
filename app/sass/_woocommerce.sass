@@ -126,9 +126,10 @@
         text-align: center
         margin-bottom: -1px
         padding: 12px 0
-        opacity: 0.5
+        opacity: 0.75
         transition: opacity 0.3s ease
         font-size: 0.8em
+        background: linear-gradient(0deg, #303c42 0%, #37424b 100%) !important
 
         i.fa
           padding-right: 4px
@@ -136,6 +137,7 @@
 
         &:hover
           opacity: 1
+          background: linear-gradient(0deg, #303c42 0%, #37424b 100%) !important
 
       h2.woocommerce-loop-product__title,
       span.price
@@ -188,3 +190,12 @@ abbr.required
 
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger
   z-index: 1
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li
+  border-radius: 0
+
+  &::before
+    display: none
+
+  &::after
+    display: none
