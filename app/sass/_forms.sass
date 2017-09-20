@@ -78,10 +78,19 @@ label
   -webkit-appearance: none
   margin: 0
 
-.product div.quantity input[type="number"]
-  border-color: #eee
-  border-radius: 0
-  outline: none
+.product div.quantity
+  @media screen and (max-width: 768px)
+    margin-bottom: 15px
+    padding-bottom: 15px
+    display: inline-block
+
+  input[type="number"]
+    border-color: #eee
+    border-radius: 0
+    outline: none
+
+    @media screen and (max-width: 768px)
+      max-width: 50%
 
 .fancyNumField
   width: 34px
