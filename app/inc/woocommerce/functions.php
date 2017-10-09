@@ -13,10 +13,10 @@ if (!function_exists('loop_columns')) {
 }
 
 // Customize WooCommerce no shipping method checkout notification text
-add_filter( 'woocommerce_cart_no_shipping_available_html', 'change_noship_message' );
-add_filter( 'woocommerce_no_shipping_available_html', 'change_noship_message' );
-function change_noship_message() {
-    print "Oh no! It looks like you live outside of our delivery area.";
+add_filter( 'woocommerce_no_shipping_available_html', 'my_custom_no_shipping_message' );
+add_filter( 'woocommerce_cart_no_shipping_available_html', 'my_custom_no_shipping_message' );
+function my_custom_no_shipping_message( $message ) {
+	return __( 'Delivery is available to select ZIP codes in NH and MA. Full list of the ZIP codes on <a href="/delivery-area">our delivery area</a> page.' );
 }
 
 // Remove the sorting dropdown from Woocommerce

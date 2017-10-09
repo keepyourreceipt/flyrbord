@@ -148,9 +148,15 @@ jQuery( document ).ready(function( $ ) {
 
   function wrapWooCommerceCheckoutNotifications() {
     // Wrap WooCommerce checkout notifications with bootstrap grid classes
-    if ( $('.woocommerce-NoticeGroup').length ) {
-      $('.woocommerce-NoticeGroup').addClass('col-sm-12');
-    }
+    $("body").bind("DOMSubtreeModified", function() {
+      if ( $(this).find('.woocommerce-NoticeGroup').length ) {
+        $(this).find('.woocommerce-NoticeGroup').addClass('col-sm-12');
+        var shippingErrorMessage = $('.woocommerce-NoticeGroup ul > li:contains("No shipping method")');
+        if ( shippingErrorMessage.length ) {
+          shippingErrorMessage.text("Oh no! We're not currently delivering to your ZIP code. Please contact us for more info.");
+        }
+      }
+    });
   }
 
 });
