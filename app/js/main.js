@@ -12,6 +12,7 @@ jQuery( document ).ready(function( $ ) {
     addToCartButtonIcon();
     addDesktopSubMenuClasses();
     fancyNumField();
+    wrapWooCommerceCheckoutNotifications();
   }
 
   function fancyNumField() {
@@ -142,6 +143,13 @@ jQuery( document ).ready(function( $ ) {
     var $element = $('.woocommerce-page select.orderby');
     if ( $element.length ) {
       $element.addClass('form-control');
+    }
+  }
+
+  function wrapWooCommerceCheckoutNotifications() {
+    // Wrap WooCommerce checkout notifications with bootstrap grid classes
+    if ( $('.woocommerce-NoticeGroup').length ) {
+      $('.woocommerce-NoticeGroup').addClass('col-sm-12');
     }
   }
 

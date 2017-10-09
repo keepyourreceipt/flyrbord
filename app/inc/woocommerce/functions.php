@@ -4,6 +4,7 @@
 * Customize Woocommerce output and options
 ************************************************************/
 
+// Display three items on WooCommerce product archive templates
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
   function loop_columns() {
@@ -11,6 +12,12 @@ if (!function_exists('loop_columns')) {
   }
 }
 
+// Customize WooCommerce no shipping method checkout notification text
+add_filter( 'woocommerce_cart_no_shipping_available_html', 'change_noship_message' );
+add_filter( 'woocommerce_no_shipping_available_html', 'change_noship_message' );
+function change_noship_message() {
+    print "Oh no! It looks like you live outside of our delivery area.";
+}
 
 // Remove the sorting dropdown from Woocommerce
 remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_catalog_ordering', 30 );
