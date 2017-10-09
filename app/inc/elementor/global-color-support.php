@@ -38,7 +38,7 @@ input[type="submit"] {
   background-color:<?php echo $accent_color; ?> !important;
   color: white !important;
   text-shadow: transparent !important;
-  box-shadow: none;  
+  box-shadow: none;
 }
 
 .woocommerce #content input.button:hover,
@@ -108,6 +108,7 @@ input[type="submit"] {
 
 .woocommerce-info::before,
 .woocommerce-message::before,
+.stock.in-stock,
 body a {
   color: <?php echo $accent_color; ?>;
 }
