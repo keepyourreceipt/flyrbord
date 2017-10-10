@@ -34,7 +34,7 @@ function sv_remove_product_page_skus( $enabled ) {
 }
 
 // Add custom button label text on product archive page
-add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );    // 2.1 +
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );
 function woo_archive_custom_cart_button_text() {
     return __( 'Select Options', 'woocommerce' );
 }
@@ -46,6 +46,14 @@ add_filter( 'wc_product_sku_enabled', 'sv_remove_product_page_skus' );
 add_filter( 'woocommerce_show_page_title' , 'hide_page_title' );
 function hide_page_title() {
 	return false;
+}
+
+// Force woocommerce button to use permalink URL vs. AJAX add to cart
+if ( ! function_exists('woocommerce_template_loop_add_to_cart') ) {
+  function woocommerce_template_loop_add_to_cart() {
+    global $product;
+    echo '<a href="'. get_permalink() .'" rel="nofollow" class="button product_type_variable add_to_cart_button">More Info</a>';
+ }
 }
 
 /***********************************************************
