@@ -1,4 +1,11 @@
 <?php
+
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+  $WooCommerceIsActive = true;
+} else {
+  $WooCommerceIsActive = false;
+}
+
 // Include Kirki for customizer options and global content
 require_once get_template_directory() . '/inc/kirki/include-kirki.php';
 

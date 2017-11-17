@@ -1,3 +1,4 @@
+<?php global $WooCommerceIsActive; ?>
 <div class="main-menu container-fluid">
 
   <div class="row menu-container">
@@ -26,21 +27,34 @@
               'walker' => new Flyrbord_Desktop_Nav_Walker()
             )); ?>
         </div>
+
         <div class="col-xs-2 text-right navigation-tools">
-          <?php if ( is_user_logged_in() ) { ?>
-            <a class="hidden-xs hidden-sm" href="<?php echo wp_logout_url( home_url() ); ?>">
-              <span>Logout</span>
+          <?php
+          // Check if WooCommerce is active
+          if ( $WooCommerceIsActive ) { ?>
+            <?php if ( is_user_logged_in() ) { ?>
+              <a class="hidden-xs hidden-sm" href="<?php echo wp_logout_url( home_url() ); ?>">
+                <span>Logout</span>
+              </a>
+            <?php } else { ?>
+              <a class="hidden-xs hidden-sm" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="navigation-login">
+                <span>Login</span>
+              </a>
+            <?php } ?>
+            <a href="<?php echo wc_get_cart_url(); ?>" class="navigation-cart">
+              <?php $cart_count = WC()->cart->get_cart_contents_count(); ?>
+              <span><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hidden-xs hidden-sm"><?php if ( $cart_count > 0 ) { echo "(" . $cart_count . ")"; } ?><span></span>
             </a>
-          <?php } else { ?>
-            <a class="hidden-xs hidden-sm" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="navigation-login">
-              <span>Login</span>
-            </a>
+          <?php
+            // If WooCommerce is not active, adjust menu as needed
+            } else { ?>
+              <a class="search-link" href="<?php echo get_search_link(); ?>">
+                <i class="fa fa-search"></i>
+              </a>
           <?php } ?>
-          <a href="<?php echo wc_get_cart_url(); ?>" class="navigation-cart">
-            <?php $cart_count = WC()->cart->get_cart_contents_count(); ?>
-            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hidden-xs hidden-sm"><?php if ( $cart_count > 0 ) { echo "(" . $cart_count . ")"; } ?><span></span>
-          </a>
         </div>
+
+
       </div>
     </div>
   </div> <!-- End desktop menu -->
