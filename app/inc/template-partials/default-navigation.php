@@ -23,7 +23,7 @@
       'fallback_cb' => 'default_header_nav',
       'container' => 'div',
       'container_class' => 'links',
-      // 'walker' => new Flyrbord_Desktop_Nav_Walker()
+      'walker' => new Flyrbord_Desktop_Nav_Walker()
     )); ?>
 
     <div class="tools">
