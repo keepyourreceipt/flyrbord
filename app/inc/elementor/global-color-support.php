@@ -114,7 +114,7 @@ body a {
 }
 
 body a:hover {
-  color: <?php echo $text_color; ?>;
+  color: <?php echo $accent_color; ?>;
 }
 
 p,

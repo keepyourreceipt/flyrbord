@@ -1,175 +1,74 @@
 .main-menu
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19), 0 2px 7px rgba(0, 0, 0, 0.23)
-  position: relative
-  z-index: 9
+  padding: 8px 0
+  font-size: 0.88em
 
-  .menu-container
-    // background: linear-gradient(0deg,#303c42 0%,#37424b 100%)
+  .content
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    padding: 0 15px
+    max-width: 1150px
+    margin: 0 auto
 
-  .navigation-links
-    position: inherit
+    .logo
+      flex-grow: 1
 
-  ul.menu
-    > li.menu-item
-      > ul.sub-menu
-        position: absolute
-        background: #455a64
-        backface-visibility: hidden
-        transition: top 0.3s ease-in, opacity 0.5s ease
-        -moz-transition: top 0.3s ease-in, opacity 0.5s ease
-        -ms-transition: top 0.3s ease-in, opacity 0.5s ease
-        -webkit-transition: top 0.3s ease-in, opacity 0.5s ease
-        visibility: hidden
-        min-width: 290px
-        padding: 10px
-        top: calc(100% - 4px)
-        border-radius: 2px
-        transform: translate(-50%) scale(0.92)
-        -moz-transform: translate(-50%) scale(0.92)
-        -ms-transform: translate(-50%) scale(0.92)
-        -webkit-transform: translate(-50%) scale(0.92)
-        transition: none
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19), 0 2px 7px rgba(0, 0, 0, 0.23)
-        z-index: 9999
-        text-align: left
-        box-sizing: border-box
+      img
+        max-height: 68px
 
-        &:before
-          content: ""
-          display: block
-          width: 10px
-          height: 10px
-          background: linear-gradient(135deg, #455a64 50%, transparent 50%)
-          position: absolute
-          top: -5px
-          left: calc(50% - 5px)
-          transform: rotate(45deg)
-          -moz-transform: rotate(45deg)
-          -ms-transform: rotate(45deg)
-          -webkit-transform: rotate(45deg)
+    .links
+      flex-grow: 6
 
-        li
-          display: block
-          vertical-align: top
-
-          a
-            line-height: 1.5em
-            display: block
-            text-align: left
-            padding: 10px
-            border-radius: 2px
-            font-size: 0.85em
-
-            span
-              display: block
-              text-transform: none
-              font-style: italic
-              font-size: 10px
-              opacity: 0.6
-
-        &.active
-          transform: translate(-50%) scale(1)
-          -moz-transform: translate(-50%) scale(1)
-          -ms-transform: translate(-50%) scale(1)
-          -webkit-transform: translate(-50%) scale(1)
-          transition: all 0.1s linear
-          -moz-transition: all 0.1s linear
-          -ms-transition: all 0.1s linear
-          -webkit-transition: all 0.1s linear
-          opacity: 1
-          display: inline-block
-          visibility: visible
-
-        &.sub-menu-items-have-children
-          li
-            display: inline-block
-            width: 200px
-
-  .navigation-logo
-
-    .menu-logo
-      max-height: 66px
-      padding-top: 8px
-      padding-bottom: 8px
-
-    @media screen and ( max-width: 992px )
-      text-align: center
-
-      .menu-logo
-        max-height: 66px
-
-  .main-menu-items
-    text-align: center
-
-    ul
-      padding-left: 0px
-      margin-left: 0px
-      margin-bottom: 0
-      display: inline-block
-
-      li
+      ul.menu
+        display: flex
+        padding: 0
+        margin: 0
         list-style: none
-        display: inline-block
+        justify-content: center
 
-    a
-      text-decoration: none
-      color: $white
-      line-height: 66px
-      text-transform: uppercase
-      font-size: 0.8em
-      letter-spacing: 0.75px
-      font-weight: 300
-      padding: 0 12px
-      transition: background 0.3s ease
-      -moz-transition: background 0.3s ease
-      -ms-transition: background 0.3s ease
-      -webkit-transition: background 0.3s ease
-      display: inline-block
+        > li.menu-item
+          padding: 10px
 
-      &:hover
-        background: rgba(0,0,0,0.1)
+          > a
+            text-decoration: none
+            opacity: 1
+            transition: opacity 0.2s ease
 
-  .mobile-menu-toggle
-    font-size: 1em
-    color: $white
-    line-height: 66px
-    cursor: pointer
+            &:hover
+              text-decoration: none
+              opacity: 0.8
 
-  .navigation-tools
-    a
-      padding: 0 5px
-      text-decoration: none
+        li > a
+          letter-spacing: 0.07em
+          text-transform: uppercase
 
-      &.search-link
-        font-size: 1em
-        color: $white
-        line-height: 66px
-        cursor: pointer
+        ul.sub-menu
+          display: none
 
-      span
-        line-height: 65px
-        color: $white
+    .tools
+      flex-grow: 1
+      text-align: right
 
-      &.navigation-cart
-        font-size: 1.25em
+      a
+        padding-left: 8px
+        letter-spacing: 0.07em
+        text-transform: uppercase
+        opacity: 1
+        transition: opacity 0.2s ease
 
-    span
-      text-transform: uppercase
-      font-size: 0.85em
-      letter-spacing: 0.75px
-      font-weight: 300
-      display: inline-block
+      a:hover
+        text-decoration: none
+        opacity: 0.8
 
-    @media screen and ( max-width: 992px )
-      line-height: 66px
+  &.color-scheme-light
+    background-color: $light-menu-color
 
-.main-menu.color-scheme-light
-  .main-menu-items
-    > ul
-      > li
-        > a
-          color: #303c42
+    a, span
+      color: $text-dark
 
-  .navigation-tools
-    .search-link
-      color: #303c42
+  &.color-scheme-dark
+    background-color: $dark-menu-color
+
+    a, span
+      color: $text-light
