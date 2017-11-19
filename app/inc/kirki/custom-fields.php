@@ -28,6 +28,32 @@ if(class_exists('Kirki')) {
   	'priority' => 10,
   ) );
 
+  /***********************************************************
+  * Top bar
+  ************************************************************/
+
+  Kirki::add_section( 'navigation_menu', array(
+      'title'          => __( 'Navigation Menu' ),
+      'description'    => __( 'Manage the display of the navigation menu' ),
+      'panel'          => '', // Not typically needed.
+      'priority'       => 20,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    	'type'        => 'radio-buttonset',
+    	'settings'    => 'menu_color_scheme',
+    	'label'       => __( 'Menu Color Scheme', 'flyrbord' ),
+    	'section'     => 'navigation_menu',
+    	'default'     => 'dark',
+    	'priority'    => 10,
+    	'choices'     => array(
+    		'dark'   => esc_attr__( 'Dark', 'flyrbord' ),
+    		'light' => esc_attr__( 'Light', 'flyrbord' ),
+    	),
+  ) );
+
 
   /***********************************************************
   * Social media account links
