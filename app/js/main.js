@@ -75,7 +75,7 @@ jQuery( document ).ready(function( $ ) {
         }
 
         // Add sub-menu classes and set sub-menu container width
-        $(this).parents('ul.sub-menu').addClass('sub-menu-items-have-children').css('min-width', ($subMenuContainerWidth + 35 /* padding */ ) + "px");
+        // $(this).parents('ul.sub-menu').addClass('sub-menu-items-have-children').css('min-width', ($subMenuContainerWidth + 35 /* padding */ ) + "px");
 
       }
     });
