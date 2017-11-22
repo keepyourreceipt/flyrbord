@@ -51,10 +51,13 @@ if( get_option('elementor_scheme_typography') ) {
   <style>
     body,
     p,
-    a,
-    .main-menu li.menu-item a {
+    a {
       font-family: <?php echo $body_text_font_family; ?>;
       font-weight: <?php echo $body_text_font_weight; ?>;
+    }
+
+    .main-menu li.menu-item a {
+      font-family: <?php echo $body_text_font_family; ?>;
     }
 
     h1, h2, h3,
