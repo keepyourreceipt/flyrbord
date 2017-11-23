@@ -12,6 +12,7 @@ jQuery( document ).ready(function( $ ) {
     addToCartButtonIcon();
     addDesktopSubMenuClasses();
     fancyNumField();
+    multiColumnNavDropdown();
     wrapWooCommerceCheckoutNotifications();
   }
 
@@ -73,10 +74,20 @@ jQuery( document ).ready(function( $ ) {
         } else if ( $numberOfSubMenuItems > 4 ) {
           $subMenuContainerWidth = $(this).outerWidth() * 4;
         }
+      }
+    });
+  }
 
-        // Add sub-menu classes and set sub-menu container width
-        // $(this).parents('ul.sub-menu').addClass('sub-menu-items-have-children').css('min-width', ($subMenuContainerWidth + 35 /* padding */ ) + "px");
-
+  function multiColumnNavDropdown() {
+    var topLevelSubMenu = $('.main-menu > .content > .links > ul.menu > li.menu-item > ul.sub-menu');
+    topLevelSubMenu.each(function(){
+      var nestedSubMenu = $(this).find('ul.sub-menu');
+      if( nestedSubMenu.length > 1 ) {
+        var subMenuContainerWidth = 0;
+        nestedSubMenu.each(function() {
+          subMenuContainerWidth += $(this).outerWidth();
+        });
+        $(this).css('width', subMenuContainerWidth + 30 + "px");
       }
     });
   }

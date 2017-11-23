@@ -210,7 +210,9 @@ class Flyrbord_Desktop_Nav_Walker extends Walker {
 
     if( $depth > 0 ) {
         $description = $item->description;
-        $item_output .= '<span>' . $description . '</span>';
+				if ( $item->description != "" ) {
+					$item_output .= '<span>' . $description . '</span>';
+				}
     }
 
     $item_output .= '</a>';
