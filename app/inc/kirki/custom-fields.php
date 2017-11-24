@@ -145,6 +145,92 @@ if(class_exists('Kirki')) {
     'priority' => 10,
   ) );
 
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'text',
+    'settings' => 'address',
+    'label'    => __( 'Street Address', 'flyrbord' ),
+    'section'  => 'contact_info',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10,
+  ) );
+
+  /***********************************************************
+  * Business hours
+  ************************************************************/
+
+  Kirki::add_section( 'business_hours', array(
+      'title'          => __( 'Business Hours' ),
+      'description'    => __( 'Add / edit business hours' ),
+      'panel'          => '', // Not typically needed.
+      'priority'       => 220,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'text',
+    'settings' => 'sunday_hours',
+    'label'    => __( 'Sunday Hours', 'flyrbord' ),
+    'section'  => 'business_hours',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10,
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'text',
+    'settings' => 'monday_hours',
+    'label'    => __( 'Monday Hours', 'flyrbord' ),
+    'section'  => 'business_hours',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10,
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'text',
+    'settings' => 'tuesday_hours',
+    'label'    => __( 'Tuesday Hours', 'flyrbord' ),
+    'section'  => 'business_hours',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10,
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'text',
+    'settings' => 'wednesday_hours',
+    'label'    => __( 'Wednesday Hours', 'flyrbord' ),
+    'section'  => 'business_hours',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10,
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'text',
+    'settings' => 'thursday_hours',
+    'label'    => __( 'Thursday Hours', 'flyrbord' ),
+    'section'  => 'business_hours',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10,
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'text',
+    'settings' => 'friday_hours',
+    'label'    => __( 'Friday Hours', 'flyrbord' ),
+    'section'  => 'business_hours',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10,
+  ) );
+
+  Kirki::add_field( 'flyrbord', array(
+    'type'     => 'text',
+    'settings' => 'saturday_hours',
+    'label'    => __( 'Saturday Hours', 'flyrbord' ),
+    'section'  => 'business_hours',
+    'default'  => esc_attr__( '', 'flyrbord' ),
+    'priority' => 10,
+  ) );
+
+
 
   /***********************************************************
   * Google analytics

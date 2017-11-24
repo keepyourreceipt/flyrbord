@@ -1,5 +1,5 @@
 .main-menu
-  padding: 8px 0
+  padding: 12px 0
   position: relative
   z-index: 999
   font-size: 0.88em
@@ -23,12 +23,18 @@
       line-height: 2em
       text-transform: uppercase
 
+      &[href="#"]
+        cursor: default
+
+        &:hover
+          cursor: default
+
       &:hover
         text-decoration: none
         opacity: 0.8
 
     .logo
-      flex-grow: 1
+      margin-right: auto
 
       a
         padding: 0
@@ -37,7 +43,7 @@
         max-height: 48px
 
     .links
-      flex-grow: 7
+      margin-right: 10px
 
       ul.menu
         display: flex
@@ -100,6 +106,7 @@
               font-size: 0.75em
               font-style: italic
               padding-top: 5px
+              text-transform: none
 
           ul.sub-menu
             position: static
@@ -112,7 +119,8 @@
               display: none
 
     .tools
-      flex-grow: 1
+      border-left: solid 1px #fff
+      padding-left: 10px
       text-align: right
 
       a

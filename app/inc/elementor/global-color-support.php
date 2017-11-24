@@ -117,7 +117,6 @@ body a:hover {
   color: <?php echo $accent_color; ?>;
 }
 
-p,
 strong,
 em,
 ul,

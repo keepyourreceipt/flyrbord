@@ -50,8 +50,7 @@ if( get_option('elementor_scheme_typography') ) {
   <!-- Global font styles -->
   <style>
     body,
-    p,
-    a {
+     {
       font-family: <?php echo $body_text_font_family; ?>;
       font-weight: <?php echo $body_text_font_weight; ?>;
     }

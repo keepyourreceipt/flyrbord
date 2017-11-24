@@ -52,6 +52,7 @@
       <?php
         // If WooCommerce is not active, adjust menu as needed
         } else { ?>
+          <!-- https://www.google.com/maps/place/300+Main+St,+Nashua,+NH+03060/ -->
           <a class="search" href="<?php echo get_search_link(); ?>">
             <i class="fa fa-search"></i>
           </a>
