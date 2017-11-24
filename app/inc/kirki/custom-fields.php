@@ -54,6 +54,15 @@ if(class_exists('Kirki')) {
     	),
   ) );
 
+  Kirki::add_field( 'flyrbord', array(
+	'type'        => 'checkbox',
+	'settings'    => 'show_search_icon',
+	'label'       => esc_attr__( 'Show search icon', 'flyrbord' ),
+	'description' => esc_attr__( 'You may choose to show or hide the search icon in the navigation menu', 'flyrbord' ),
+	'section'     => 'navigation_menu',
+	'default'     => true,
+) );
+
 
   /***********************************************************
   * Social media account links
@@ -147,7 +156,7 @@ if(class_exists('Kirki')) {
 
   Kirki::add_field( 'flyrbord', array(
     'type'     => 'text',
-    'settings' => 'address',
+    'settings' => 'street_address',
     'label'    => __( 'Street Address', 'flyrbord' ),
     'section'  => 'contact_info',
     'default'  => esc_attr__( '', 'flyrbord' ),

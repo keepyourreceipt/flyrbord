@@ -4,11 +4,14 @@
       $hours_field_name = strtolower( date("l") ) . "_hours";
       $todays_hours = get_theme_mod( $hours_field_name, '' );
     ?>
-    <div class="business-hours">
+    <div class="hours-and-address">
       <?php if ( $todays_hours ) { ?>
-        <p><?php echo date("l"); ?>'s hours: <?php echo $todays_hours; ?></p>
+        <span><?php echo date("l"); ?>'s hours: <?php echo $todays_hours; ?></span>
       <?php } else { ?>
-        <p><?php echo date("l"); ?>'s hours: CLOSED</p>
+        <span><?php echo date("l"); ?>'s hours: CLOSED</span>
+      <?php } ?>
+      <?php if ( get_theme_mod( 'street_address', '' ) ) { ?>
+        &nbsp;|&nbsp;<span><?php echo get_theme_mod( 'street_address', '' ); ?></span>
       <?php } ?>
     </div>
 

@@ -52,10 +52,45 @@
       <?php
         // If WooCommerce is not active, adjust menu as needed
         } else { ?>
-          <!-- https://www.google.com/maps/place/300+Main+St,+Nashua,+NH+03060/ -->
-          <a class="search" href="<?php echo get_search_link(); ?>">
-            <i class="fa fa-search"></i>
-          </a>
+          <?php if ( get_theme_mod( 'facebook_account_link' ) ) { ?>
+              <a href="<?php echo get_theme_mod( 'facebook_account_link' ); ?>" target="_blank">
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+              </a>
+          <?php } ?>
+          <?php if ( get_theme_mod( 'twitter_account_link' ) ) { ?>
+              <a href="<?php echo get_theme_mod( 'twitter_account_link' ); ?>" target="_blank">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+          <?php } ?>
+          <?php if ( get_theme_mod( 'instagram_account_link' ) ) { ?>
+              <a href="<?php echo get_theme_mod( 'instagram_account_link' ); ?>" target="_blank">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+          <?php } ?>
+          <?php if ( get_theme_mod( 'pinterest_account_link' ) ) { ?>
+              <a href="<?php echo get_theme_mod( 'pinterest_account_link' ); ?>" target="_blank">
+                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+              </a>
+          <?php } ?>
+          <?php if ( get_theme_mod( 'linkedin_account_link' ) ) { ?>
+              <a href="<?php echo get_theme_mod( 'linked_account_link' ); ?>" target="_blank">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+          <?php } ?>
+          <?php
+            $street_address = strtolower( get_theme_mod( 'street_address', '' ) );
+            $map_url = "https://www.google.com/maps/place/" . str_replace(" ", "+", $street_address) . "/";
+          ?>
+          <?php if ( $street_address ) { ?>
+            <a href="<?php echo $map_url; ?>" target="_blank">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </a>
+          <?php } ?>
+          <?php if ( get_theme_mod( 'show_search_icon', '' ) ) { ?>
+            <a class="search" href="<?php echo get_search_link(); ?>">
+              <i class="fa fa-search"></i>
+            </a>
+          <?php } ?>
       <?php } ?>
 
     </div>
