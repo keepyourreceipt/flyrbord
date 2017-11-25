@@ -1,4 +1,4 @@
-<div class="top-bar">
+<div class="top-bar hidden-xs">
   <div class="content">
     <?php
       $hours_field_name = strtolower( date("l") ) . "_hours";

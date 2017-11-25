@@ -27,7 +27,8 @@
         }
 
       // Include navigation template
-      get_template_part( 'inc/template-partials/default', 'navigation' );
+      get_template_part( 'inc/template-partials/desktop', 'menu' );
+      get_template_part( 'inc/template-partials/mobile', 'menu' );
     ?>
 
     <!-- Begin main page content -->

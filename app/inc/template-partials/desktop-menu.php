@@ -1,10 +1,6 @@
 <?php global $WooCommerceIsActive; ?>
-<div class="main-menu color-scheme-<?php echo get_theme_mod( 'menu_color_scheme', '' ); ?>">
+<div class="main-menu color-scheme-<?php echo get_theme_mod( 'menu_color_scheme', '' ); ?> hidden-xs">
   <div class="content">
-
-    <!-- <div class="mobile-menu-toggle">
-      <i class="fa fa-align-left" aria-hidden="true"></i>
-    </div> -->
 
     <div class="logo">
       <?php
