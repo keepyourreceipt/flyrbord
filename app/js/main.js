@@ -5,12 +5,10 @@ jQuery( document ).ready(function( $ ) {
   function init() {
     // Setup theme scripts
     hidePreloader();
-    desktopNavigationDropdown();
     toggleMobileMenu();
-    toggleMobileSubMenu();
+    multiLevelMobileMenu();
     addCustomWCSortingClass();
     addToCartButtonIcon();
-    addDesktopSubMenuClasses();
     fancyNumField();
     multiColumnNavDropdown();
     wrapWooCommerceCheckoutNotifications();
@@ -61,23 +59,6 @@ jQuery( document ).ready(function( $ ) {
     }
   }
 
-  function addDesktopSubMenuClasses() {
-    var $subMenuItems = $('.main-menu ul.menu > li.menu-item > ul.sub-menu li');
-    $subMenuItems.each(function() {
-      if ( $(this).hasClass('menu-item-has-children') ) {
-        var $numberOfSubMenuItems = $(this).siblings().length + 1;
-        var $subMenuContainerWidth;
-
-        // Sub-menu container should have a max of 4 columns
-        if ( $numberOfSubMenuItems <= 4 ) {
-          $subMenuContainerWidth = $(this).outerWidth() * $numberOfSubMenuItems;
-        } else if ( $numberOfSubMenuItems > 4 ) {
-          $subMenuContainerWidth = $(this).outerWidth() * 4;
-        }
-      }
-    });
-  }
-
   function multiColumnNavDropdown() {
     var topLevelSubMenu = $('.main-menu > .content > .links > ul.menu > li.menu-item > ul.sub-menu');
     topLevelSubMenu.each(function(){
@@ -102,51 +83,22 @@ jQuery( document ).ready(function( $ ) {
     }
   }
 
-  function desktopNavigationDropdown() {
-    // On mouse leave, remove the active sub-menu class to close the active sub-menu
-    var $activeMenuItem = $('ul.menu > li').not('.mobile-menu');
-    $activeMenuItem.mouseleave( function() {
-      $( this ).find('.sub-menu').removeClass('active');
-    });
-
-    // On mouse enter, delay event trigger to open sub-menu
-    $('ul.menu > li').on('mouseenter', function(e){
-        var timer = setTimeout(function() {
-            var target = $( e.target );
-            target.parent().find('.sub-menu').addClass('active');
-        },  150);
-        $(this).data('hoverTimer', timer);
-    }).on('mouseleave', $('ul.menu > li'), function(e){
-        clearTimeout($(this).data('hoverTimer'));
-    });
-  }
-
   function toggleMobileMenu() {
     // Toggle mobile menu on click
-    var $toggle = $('.mobile-menu-toggle');
-    var $toggleIcon = $toggle.children('i');
-    var $menu = $('.mobile-menu');
-    if ( $toggle.length && $menu.length ) {
-      $toggle.click(function() {
-        $menu.slideToggle();
-        // Toggle icon with menu interaction
-        if ( $toggleIcon.hasClass('fa-align-left') ) {
-          $toggleIcon.attr('class', '').addClass('fa fa-times');
-        } else {
-          $toggleIcon.attr('class', '').addClass('fa fa-align-left');
-        }
-      });
-    }
+    var menuToggle = $('.main-menu-mobile .title-bar .menu-toggle');
+    var menuContainer = $('.main-menu-mobile .menu-container');
+
+    menuContainer.hide();
+
+    menuToggle.on('click', function() {
+      menuContainer.slideToggle();
+    });
   }
 
-  function toggleMobileSubMenu() {
+  function multiLevelMobileMenu() {
     // Toggle navigation sub-menus in mobile
-    var $toggleElement = $('ul.mobile-menu > li.menu-item-has-children').not('a');
-    if ( $toggleElement.length ) {
-      $toggleElement.click(function() {
-        $(this).find('.sub-menu').slideToggle();
-      });
-    }
+    $('.main-menu-mobile ul.menu > li.menu-item-has-children > ul.sub-menu').hide();
+    $('.main-menu-mobile ul.menu > li.menu-item-has-children').prepend('<span class="menu-toggle"></span>');
   }
 
   function addCustomWCSortingClass() {

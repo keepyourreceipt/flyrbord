@@ -1,7 +1,7 @@
 .main-menu-mobile
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 2px rgba(0, 0, 0, 0.13)
+  // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 2px rgba(0, 0, 0, 0.13)
 
-  .content
+  .title-bar
     display: flex
     align-items: center
     padding: 10px 15px
@@ -27,3 +27,80 @@
 
   &.color-scheme-dark
     background: $dark-menu-color
+
+  .menu-container
+    border: 1px solid transparent
+
+    .mobile-links
+      background-color: $light-menu-color
+
+      ul.menu
+        padding: 0
+        list-style: none
+        background: $light-menu-color
+
+        > li.menu-item
+          padding: 0 15px
+          border-bottom: solid 1px lighten($dark-menu-color, 50%)
+
+          a
+            line-height: 45px
+            display: block
+
+          &.menu-item-has-children
+            position: relative
+
+            span.menu-toggle
+              position: absolute
+              right: 15px
+              height: 45px
+              width: 20px
+              z-index: 999
+              cursor: pointer
+
+              &::after
+                content: ""
+                position: absolute
+                display: inline-block
+                border-radius: 4px
+                height: 20px
+                top: 13px
+                right: 9px
+                border-radius: 3px
+                width: 3px
+                background: $dark-menu-color
+
+              &::before
+                content: ""
+                position: absolute
+                display: inline-block
+                border-radius: 4px
+                width: 20px
+                right: 0
+                top: 20.5px
+                border-radius: 3px
+                height: 3px
+                background: $dark-menu-color
+
+          ul.sub-menu
+            padding-left: 0
+            list-style: none
+            position: relative
+
+            &:before
+              content: ""
+              z-index: 1
+              position: absolute
+              top: 0
+              left: -30px
+              background: blue
+              height: 100%
+              width: calc(100% + 60px)
+
+            li.menu-item
+              padding: 0
+              position: relative
+              z-index: 999
+
+              a
+                line-height: 45px
