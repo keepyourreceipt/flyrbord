@@ -91,7 +91,7 @@ jQuery( document ).ready(function( $ ) {
     menuContainer.hide();
 
     menuToggle.on('click', function() {
-      menuContainer.slideToggle();
+      menuContainer.stop().slideToggle();
     });
   }
 
@@ -99,6 +99,11 @@ jQuery( document ).ready(function( $ ) {
     // Toggle navigation sub-menus in mobile
     $('.main-menu-mobile ul.menu > li.menu-item-has-children > ul.sub-menu').hide();
     $('.main-menu-mobile ul.menu > li.menu-item-has-children').prepend('<span class="menu-toggle"></span>');
+
+    var multiLevelMenuToggle = $('.main-menu-mobile ul.menu > li.menu-item-has-children > span.menu-toggle');
+    multiLevelMenuToggle.on('click', function() {
+      jQuery(this).siblings('ul.sub-menu').slideToggle();
+    });
   }
 
   function addCustomWCSortingClass() {
