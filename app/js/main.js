@@ -91,7 +91,8 @@ jQuery( document ).ready(function( $ ) {
     menuContainer.hide();
 
     menuToggle.on('click', function() {
-      menuContainer.stop().slideToggle();
+      menuContainer.stop().slideToggle(450);
+      $('.main-menu-mobile .bar').toggleClass('active');
     });
   }
 
@@ -102,7 +103,8 @@ jQuery( document ).ready(function( $ ) {
 
     var multiLevelMenuToggle = $('.main-menu-mobile ul.menu > li.menu-item-has-children > span.menu-toggle');
     multiLevelMenuToggle.on('click', function() {
-      jQuery(this).siblings('ul.sub-menu').slideToggle();
+      $(this).toggleClass('active');
+      $(this).siblings('ul.sub-menu').stop().slideToggle(450);
     });
   }
 
