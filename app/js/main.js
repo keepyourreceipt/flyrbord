@@ -12,7 +12,10 @@ jQuery( document ).ready(function( $ ) {
     fancyNumField();
     multiColumnNavDropdown();
     wrapWooCommerceCheckoutNotifications();
+    // ninjaFormsFieldLabel();
   }
+
+  // alert($('input').length);
 
   function fancyNumField() {
     var $wcQuantityContainer = $('.product div.quantity');

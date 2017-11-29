@@ -102,3 +102,17 @@ label
   background: #eee
   cursor: pointer
   outline: none
+
+.nf-form-content
+  .nf-field-label
+    > label
+      position: absolute
+      z-index: 2
+      top: 14px
+      left: 15px
+      transition: 0.2s
+
+      &.active
+        transform: scale(0.75)
+        top: 1px
+        left: 5px
